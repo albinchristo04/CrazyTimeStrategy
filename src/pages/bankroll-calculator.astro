@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StakeCTA from '../components/StakeCTA.astro';
+import BankrollCalculator from '../components/BankrollCalculator';
+---
+<BaseLayout
+  title="Crazy Time Bankroll Calculator — Free Tool 2026"
+  description="Calculate your ideal Crazy Time bet size based on your bankroll and risk level. Free tool with Conservative, Balanced, and Aggressive presets."
+>
+  <div class="max-w-3xl mx-auto px-4 py-10">
+    <h1>Crazy Time Bankroll Calculator</h1>
+    <p class="text-slate-400 mb-8">
+      Enter your session bankroll and select a risk level to get your recommended bet size. Based on proven <a href="/crazy-time-bankroll-strategy">bankroll management</a> principles.
+    </p>
+
+    <BankrollCalculator client:load />
+
+    <div class="mt-10 prose prose-invert max-w-none">
+      <h2>How to Use This Calculator</h2>
+      <p>
+        Choose your session bankroll — the total amount you are willing to risk in one session. Select a risk level based on your style. The calculator applies a fixed percentage of your bankroll as your recommended bet size.
+      </p>
+      <ul>
+        <li><strong>Conservative (1%):</strong> Low risk. Longer sessions, slower variance. Suitable for players who want to enjoy the game without heavy swings.</li>
+        <li><strong>Balanced (2%):</strong> The recommended starting point. Good mix of session length and upside potential.</li>
+        <li><strong>Aggressive (5%):</strong> Higher risk for players chasing bonus rounds. Expect shorter sessions with bigger swings.</li>
+      </ul>
+      <p>
+        For a complete breakdown, read our <a href="/crazy-time-bankroll-strategy">bankroll management guide</a> and the <a href="/crazy-time-strategy">Crazy Time strategy guide</a>.
+        Check the <a href="/crazy-time-rtp">RTP breakdown</a> to understand expected returns before you play.
+        When you are ready, <a href="/where-to-play-crazy-time">find where to play Crazy Time</a> safely.
+      </p>
+    </div>
+
+    <StakeCTA variant="card" />
+    <StakeCTA variant="sticky" />
+  </div>
+</BaseLayout>

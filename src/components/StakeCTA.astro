@@ -1,0 +1,57 @@
+---
+interface Props {
+  variant?: 'inline' | 'card' | 'sticky';
+  text?: string;
+}
+
+const {
+  variant = 'inline',
+  text = 'Play Crazy Time on Stake',
+} = Astro.props;
+
+const href = 'https://stake.ac/?c=4GH1nePX';
+---
+
+{variant === 'card' && (
+  <div class="bg-slate-800 border border-amber-500/40 rounded-xl p-6 my-8 text-center not-prose">
+    <div class="text-3xl mb-3">🎰</div>
+    <h3 class="text-xl font-bold text-slate-100 mb-2">Where to Play Crazy Time</h3>
+    <p class="text-slate-400 text-sm mb-5 max-w-sm mx-auto">
+      Stake offers live Crazy Time 24/7 with crypto payments, worldwide access, and instant withdrawals.
+    </p>
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener sponsored"
+      class="inline-block bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold py-3 px-8 rounded-xl transition text-base"
+    >
+      {text} →
+    </a>
+    <p class="text-xs text-slate-600 mt-3">Affiliate link — we earn commission at no cost to you</p>
+  </div>
+)}
+
+{variant === 'inline' && (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener sponsored"
+    class="inline-flex items-center bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold py-2.5 px-6 rounded-xl transition my-2"
+  >
+    {text} →
+  </a>
+)}
+
+{variant === 'sticky' && (
+  <div class="fixed bottom-0 left-0 right-0 bg-slate-900 border-t border-amber-500/30 py-3 px-4 flex items-center justify-between z-50 md:hidden">
+    <span class="font-semibold text-sm text-slate-200">Ready to play?</span>
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener sponsored"
+      class="bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold py-1.5 px-5 rounded-lg text-sm transition"
+    >
+      Open Stake →
+    </a>
+  </div>
+)}

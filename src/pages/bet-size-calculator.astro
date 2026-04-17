@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BankrollCalculator from '../components/BankrollCalculator';
+import StakeCTA from '../components/StakeCTA.astro';
+---
+<BaseLayout
+  title="Crazy Time Bet Size Calculator — Free Tool 2026"
+  description="Calculate the optimal Crazy Time bet size for your bankroll. Based on proven bankroll management percentages."
+>
+  <div class="max-w-3xl mx-auto px-4 py-10">
+    <h1>Crazy Time Bet Size Calculator</h1>
+    <p class="text-slate-400 mb-8">
+      Find your ideal bet size based on your session bankroll and risk tolerance.
+    </p>
+
+    <BankrollCalculator client:load />
+
+    <div class="mt-10 prose prose-invert max-w-none">
+      <h2>Why Bet Size Matters</h2>
+      <p>
+        Your bet size determines how many rounds you can play before busting, which directly affects how many bonus rounds you see. Too high a bet size and you bust before a bonus hits. Too low and bonuses don't pay enough to matter.
+      </p>
+      <p>
+        The 1–2% rule is the most widely recommended starting point. Read the full <a href="/crazy-time-bankroll-strategy">bankroll management guide</a> for the theory behind it.
+        Our complete <a href="/crazy-time-strategy">Crazy Time strategy guide</a> puts bet sizing in context with the full session approach.
+        Check the <a href="/crazy-time-rtp">RTP breakdown</a> to understand expected returns.
+        <a href="/where-to-play-crazy-time">Find where to play Crazy Time</a> safely.
+      </p>
+    </div>
+
+    <StakeCTA variant="card" />
+    <StakeCTA variant="sticky" />
+  </div>
+</BaseLayout>

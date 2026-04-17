@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StakeCTA from '../components/StakeCTA.astro';
+---
+<BaseLayout
+  title="Where to Play Crazy Time Online — Best Casino 2026"
+  description="Find the best casino to play Crazy Time online. Stake offers live Crazy Time 24/7 with crypto payments, worldwide access, and instant withdrawals."
+>
+  <div class="max-w-3xl mx-auto px-4 py-10">
+    <h1>Where to Play Crazy Time Online in 2026</h1>
+    <p class="text-lg text-slate-300">
+      Crazy Time is available at select live casinos worldwide. Stake is the recommended platform — it runs live Crazy Time 24/7, accepts crypto payments, and is accessible from most countries.
+    </p>
+
+    <!-- Primary Stake card -->
+    <div class="bg-slate-800 border-2 border-amber-500 rounded-2xl p-6 my-8">
+      <div class="flex items-start gap-4">
+        <div class="text-5xl">🎰</div>
+        <div class="flex-1">
+          <div class="flex items-center gap-2 mb-1">
+            <h2 class="text-xl font-bold text-slate-100 m-0">Stake</h2>
+            <span class="bg-amber-500 text-slate-900 text-xs font-bold px-2 py-0.5 rounded-full">RECOMMENDED</span>
+          </div>
+          <div class="grid grid-cols-2 gap-2 my-4 text-sm">
+            {[
+              '✓ Live Crazy Time 24/7',
+              '✓ Crypto payments (BTC, ETH, USDT)',
+              '✓ Worldwide access',
+              '✓ Instant withdrawals',
+              '✓ Provably fair games',
+              '✓ Mobile-friendly',
+            ].map(f => (
+              <span class="text-slate-300">{f}</span>
+            ))}
+          </div>
+          <a
+            href="https://stake.ac/?c=4GH1nePX"
+            target="_blank"
+            rel="noopener sponsored"
+            class="inline-block bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold py-3 px-8 rounded-xl transition w-full text-center text-lg mt-2"
+          >
+            Play Crazy Time on Stake — Sign Up Free →
+          </a>
+          <p class="text-xs text-slate-500 mt-2 text-center">Affiliate link — we earn commission at no cost to you</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>Why Stake for Crazy Time?</h2>
+    <p>
+      Stake runs Evolution Gaming's live Crazy Time tables with no scheduled downtime. The platform is crypto-native — deposits and withdrawals in Bitcoin, Ethereum, Litecoin, USDT, and others clear in minutes. There is no KYC barrier for most users, and the interface is clean on both desktop and mobile.
+    </p>
+    <p>
+      For strategy players, Stake's table history and statistics panel lets you track recent results directly in the game. Pair this with our <a href="/crazy-time-predictor">live Crazy Time tracker</a> for a full picture before each session.
+    </p>
+
+    <h2>How to Start Playing on Stake</h2>
+    <ol>
+      <li>Click the Stake link on this page to open your account</li>
+      <li>Complete registration (email or crypto wallet)</li>
+      <li>Deposit using your preferred crypto</li>
+      <li>Search "Crazy Time" in the Live Casino section</li>
+      <li>Review your <a href="/crazy-time-bankroll-strategy">bankroll management</a> plan before the first bet</li>
+    </ol>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="space-y-4">
+      {[
+        { q: 'Is Stake available in my country?', a: 'Stake operates in most countries worldwide. Check Stake\'s terms of service for the current restricted country list.' },
+        { q: 'Can I play Crazy Time for free?', a: 'Live dealer games cannot be played for free — they require real money bets. You can watch a live table without betting to get familiar.' },
+        { q: 'Does Stake have a welcome bonus for Crazy Time?', a: 'Stake runs regular promotions. Check their promotions page after signing up for current offers.' },
+        { q: 'Is Crazy Time on Stake fair?', a: 'Yes. The game is provided by Evolution Gaming and uses a certified physical wheel — not a software RNG. Results are independently audited.' },
+        { q: 'What crypto does Stake accept?', a: 'Bitcoin, Ethereum, Litecoin, USDT, XRP, and several others. Full list is on the Stake cashier page.' },
+      ].map(faq => (
+        <div class="bg-slate-800 rounded-xl p-4">
+          <p class="font-semibold text-slate-100 mb-1 m-0">{faq.q}</p>
+          <p class="text-slate-400 text-sm m-0">{faq.a}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-10 pt-8 border-t border-slate-700 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+      <a href="/crazy-time-strategy" class="text-amber-400 hover:text-amber-300">→ Crazy Time strategy guide</a>
+      <a href="/crazy-time-rtp" class="text-amber-400 hover:text-amber-300">→ RTP breakdown</a>
+      <a href="/crazy-time-bankroll-strategy" class="text-amber-400 hover:text-amber-300">→ Bankroll management</a>
+      <a href="/crazy-time-predictor" class="text-amber-400 hover:text-amber-300">→ Live Crazy Time tracker</a>
+    </div>
+
+    <StakeCTA variant="sticky" />
+  </div>
+</BaseLayout>

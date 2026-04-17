@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StakeCTA from '../components/StakeCTA.astro';
+import Predictor from '../components/Predictor';
+---
+<BaseLayout
+  title="Crazy Time Predictor — Live RNG Pattern Tracker 2026"
+  description="Track live Crazy Time results, frequency analysis, gap data, and pattern-based predictions. Updated on demand with real game data."
+>
+  <div class="max-w-4xl mx-auto px-4 py-10">
+    <div class="mb-8">
+      <h1 class="text-3xl md:text-4xl font-extrabold text-slate-100 mb-3">
+        Crazy Time RNG Pattern Tracker
+      </h1>
+      <p class="text-slate-400 text-lg mb-4">
+        Live result analysis based on the last 100 Crazy Time outcomes. Frequency vs expected, gap analysis, and a 4-signal prediction score per segment.
+      </p>
+      <div class="flex flex-wrap gap-4 text-sm text-slate-500">
+        <span>✓ Real game data</span>
+        <span>✓ User-triggered refresh</span>
+        <span>✓ Manual entry mode</span>
+        <span>✓ No auto-polling</span>
+      </div>
+    </div>
+
+    <Predictor client:load />
+
+    <StakeCTA
+      variant="card"
+      text="Play on Stake now — Live Crazy Time tables open"
+    />
+
+    <StakeCTA variant="sticky" />
+
+    <!-- Internal links -->
+    <div class="mt-10 pt-8 border-t border-slate-700 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+      <a href="/crazy-time-strategy" class="text-amber-400 hover:text-amber-300">→ Crazy Time strategy guide</a>
+      <a href="/crazy-time-rtp" class="text-amber-400 hover:text-amber-300">→ RTP breakdown</a>
+      <a href="/crazy-time-bankroll-strategy" class="text-amber-400 hover:text-amber-300">→ Bankroll management</a>
+      <a href="/where-to-play-crazy-time" class="text-amber-400 hover:text-amber-300">→ Where to play Crazy Time</a>
+    </div>
+  </div>
+</BaseLayout>

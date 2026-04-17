@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StakeCTA from '../components/StakeCTA.astro';
+---
+<BaseLayout
+  title="Cash Hunt Strategy — Crazy Time Bonus Guide 2026"
+  description="Best Cash Hunt strategy for Crazy Time. How the bonus works, how to pick your symbol, and how to size your Cash Hunt stake."
+>
+  <div class="max-w-3xl mx-auto px-4 py-10">
+    <h1>Cash Hunt Strategy for Crazy Time 2026</h1>
+    <p class="text-lg text-slate-300">
+      Cash Hunt is a bonus round in Crazy Time where a cannon fires at a wall of 108 symbols, each hiding a multiplier. This guide explains the mechanics, the myth of symbol selection, and how to size your Cash Hunt stake.
+    </p>
+
+    <h2>How Cash Hunt Works</h2>
+    <p>
+      When the wheel lands on Cash Hunt, 108 symbols are displayed on a large grid. A cannon aims and fires — the selected symbol reveals a multiplier. If the top slot showed a multiplier before the main spin, all Cash Hunt multipliers are boosted.
+    </p>
+    <p>
+      Players who bet on Cash Hunt can see the grid and "choose" a symbol cluster before the cannon fires. The cannon selection is random — your choice of area does not statistically affect the outcome.
+    </p>
+
+    <h2>Does Symbol Selection Matter?</h2>
+    <p>
+      No. The cannon's target is determined by a certified RNG before the selection phase. Your choice of symbol area does not influence the result. Cash Hunt is a fully random outcome dressed in interactive mechanics.
+    </p>
+
+    <h2>Cash Hunt Bet Sizing</h2>
+    <p>
+      Cash Hunt appears on 2 of 54 segments (~3.7% per spin). Stake sizing is the same as Coin Flip — a small fixed percentage of your total round bet:
+    </p>
+    <ul>
+      <li>Allocate 20–30% of your round bet to Cash Hunt</li>
+      <li>Keep a larger stake on main wheel numbers for session sustainability</li>
+    </ul>
+    <p>
+      Use the <a href="/bankroll-calculator">bankroll calculator</a> to find your total round budget, then split it across your segments.
+    </p>
+
+    <StakeCTA variant="card" text="Play Cash Hunt on Stake →" />
+
+    <div class="space-y-4 mt-2">
+      <h2>FAQ</h2>
+      {[
+        { q: 'How often does Cash Hunt trigger?', a: 'Cash Hunt appears on 2 of 54 wheel segments — about 3.7% per spin, roughly once every 27 rounds.' },
+        { q: 'What is the best symbol to pick in Cash Hunt?', a: 'There is no best symbol. The cannon target is random. Pick freely — it does not affect the result.' },
+        { q: 'What is the maximum Cash Hunt payout?', a: 'Cash Hunt multipliers can reach ×100+ before top slot boosts. With doubles, significantly higher.' },
+        { q: 'Is Cash Hunt or Coin Flip better to bet on?', a: 'They have similar probabilities. Cash Hunt multipliers tend to be more spread out. Neither has a clear edge over the other.' },
+        { q: 'Can I watch Cash Hunt without betting on it?', a: 'You see the bonus round play out for players who bet on it, but you receive no payout unless you had a Cash Hunt bet active.' },
+      ].map(faq => (
+        <div class="bg-slate-800 rounded-xl p-4">
+          <p class="font-semibold text-slate-100 mb-1 m-0">{faq.q}</p>
+          <p class="text-slate-400 text-sm m-0">{faq.a}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-10 pt-8 border-t border-slate-700 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+      <a href="/crazy-time-strategy" class="text-amber-400 hover:text-amber-300">→ Crazy Time strategy guide</a>
+      <a href="/crazy-time-rtp" class="text-amber-400 hover:text-amber-300">→ RTP breakdown</a>
+      <a href="/crazy-time-bankroll-strategy" class="text-amber-400 hover:text-amber-300">→ Bankroll management</a>
+      <a href="/where-to-play-crazy-time" class="text-amber-400 hover:text-amber-300">→ Where to play Crazy Time</a>
+    </div>
+    <StakeCTA variant="sticky" />
+  </div>
+</BaseLayout>

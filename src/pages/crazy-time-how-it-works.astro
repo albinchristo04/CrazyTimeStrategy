@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StakeCTA from '../components/StakeCTA.astro';
+---
+<BaseLayout
+  title="How Crazy Time Works — Complete Game Mechanics 2026"
+  description="How Crazy Time works explained from first principles. The wheel, the top slot, bonus rounds, and the RNG behind each spin."
+>
+  <div class="max-w-3xl mx-auto px-4 py-10">
+    <h1>How Crazy Time Works 2026</h1>
+    <p class="text-lg text-slate-300">
+      Crazy Time is a live game show produced by Evolution Gaming. A physical wheel with 54 segments spins each round. This page explains every mechanic from the betting phase to the bonus round payout.
+    </p>
+
+    <h2>The Game Flow Each Round</h2>
+    <ol>
+      <li><strong>Betting phase (15–20 sec):</strong> Players place bets on any segments before the countdown ends</li>
+      <li><strong>Top slot spin:</strong> A separate mini-wheel spins and lands on a segment + multiplier</li>
+      <li><strong>Main wheel spin:</strong> The host releases the main wheel</li>
+      <li><strong>Result:</strong> Wheel stops — if it matches your bet, you win. If it lands on a bonus segment, bonus round triggers</li>
+      <li><strong>Bonus resolution:</strong> Players who bet on the bonus segment play the mini-game</li>
+      <li><strong>Payout:</strong> Winnings credited — next round begins</li>
+    </ol>
+
+    <h2>The Physical Wheel</h2>
+    <p>
+      The wheel is a real mechanical device filmed by HD cameras from multiple angles. It is not a software simulation. The outcome is determined by the wheel's physical spin — friction, initial velocity, and the dividers between segments. Independent testing labs verify this meets published probability specifications.
+    </p>
+
+    <h2>The Top Slot Mechanism</h2>
+    <p>
+      Before the main wheel spins, a horizontal slot machine-style display above the wheel spins and locks on a random result. This result shows a segment name and a multiplier (e.g., "2 — ×3"). If the main wheel lands on that segment, all bets on it receive the multiplied payout. For bonus segments, it can show "double" — which doubles all multipliers in the upcoming bonus round.
+    </p>
+
+    <h2>How Bonus Rounds Trigger</h2>
+    <p>
+      When the wheel lands on Coin Flip, Cash Hunt, Pachinko, or Crazy Time, the bonus round activates. Only players who placed a bet on that bonus segment participate. The bonus round plays out in a separate studio set, and the result is determined by the mini-game mechanics for each bonus type.
+    </p>
+
+    <h2>Where the Randomness Comes From</h2>
+    <p>
+      The main wheel's randomness is physical — wheel physics. The top slot and some bonus elements (like the Cash Hunt cannon) use a certified software RNG. All randomness sources are independently tested. Read the <a href="/crazy-time-is-it-rigged">full fairness breakdown</a> for details.
+    </p>
+
+    <StakeCTA variant="card" text="Watch Crazy Time Live on Stake →" />
+
+    <div class="space-y-4 mt-2">
+      <h2>FAQ</h2>
+      {[
+        { q: 'Is Crazy Time a physical wheel or software?', a: 'The main wheel is a physical mechanical device. Some bonus elements use certified software RNG.' },
+        { q: 'How fast does each round go?', a: 'Each round takes roughly 30–60 seconds from betting open to result, plus bonus round time if triggered.' },
+        { q: 'What is the top slot and how does it affect payouts?', a: 'The top slot spins a mini-wheel before the main wheel and can apply a multiplier to one segment or a "double" to a bonus round.' },
+        { q: 'Can the wheel land between segments?', a: 'No. Physical dividers (frets) separate every segment. The result is always a clean segment landing.' },
+        { q: 'How is the bonus round result determined?', a: 'Each bonus type has its own mechanic: Coin Flip (physical coin), Cash Hunt (RNG cannon), Pachinko (physical ball), Crazy Time (digital wheel).' },
+      ].map(faq => (
+        <div class="bg-slate-800 rounded-xl p-4">
+          <p class="font-semibold text-slate-100 mb-1 m-0">{faq.q}</p>
+          <p class="text-slate-400 text-sm m-0">{faq.a}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-10 pt-8 border-t border-slate-700 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+      <a href="/crazy-time-strategy" class="text-amber-400 hover:text-amber-300">→ Crazy Time strategy guide</a>
+      <a href="/crazy-time-rtp" class="text-amber-400 hover:text-amber-300">→ RTP breakdown</a>
+      <a href="/crazy-time-bankroll-strategy" class="text-amber-400 hover:text-amber-300">→ Bankroll management</a>
+      <a href="/where-to-play-crazy-time" class="text-amber-400 hover:text-amber-300">→ Where to play Crazy Time</a>
+    </div>
+    <StakeCTA variant="sticky" />
+  </div>
+</BaseLayout>

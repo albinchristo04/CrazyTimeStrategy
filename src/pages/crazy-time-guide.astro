@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StakeCTA from '../components/StakeCTA.astro';
+---
+<BaseLayout
+  title="Crazy Time Guide for Beginners — How to Play in 2026"
+  description="The complete beginner guide to Crazy Time. How the wheel works, how to place bets, bonus round rules, and how to start safely."
+>
+  <div class="max-w-3xl mx-auto px-4 py-10">
+    <h1>Crazy Time Guide for Beginners 2026</h1>
+    <p class="text-lg text-slate-300">
+      Crazy Time is a live casino game show by Evolution Gaming. This guide explains how the wheel works, how to bet, what each bonus round does, and how to start your first session safely.
+    </p>
+
+    <h2>What Is Crazy Time?</h2>
+    <p>
+      Crazy Time is a spinning wheel game hosted by a live presenter. Each round, the wheel spins and lands on one of 54 segments. Players bet on which segment will win before the spin. There are four number segments (1, 2, 5, 10) and four bonus rounds (Coin Flip, Cash Hunt, Pachinko, Crazy Time).
+    </p>
+
+    <h2>How to Place a Bet</h2>
+    <ol>
+      <li>Choose your chip size</li>
+      <li>Click the segment(s) you want to bet on before the countdown ends</li>
+      <li>The wheel spins — if it lands on your bet, you win</li>
+      <li>Number segments pay their face value (2 segment pays 2:1, etc.)</li>
+      <li>Bonus segments open a separate mini-game with higher payouts</li>
+    </ol>
+
+    <h2>The Four Bonus Rounds</h2>
+    <ul>
+      <li><strong>Coin Flip:</strong> A coin with two multipliers (one red, one blue) is flipped. Your side wins. Payouts from 2× to over 1000×.</li>
+      <li><strong>Cash Hunt:</strong> 108 symbols are shot at by a cannon. Your symbol reveals a multiplier.</li>
+      <li><strong>Pachinko:</strong> A ball drops through a pegboard and lands on a multiplier. Max 10,000×.</li>
+      <li><strong>Crazy Time:</strong> A giant digital wheel spins with multipliers up to 20,000×.</li>
+    </ul>
+
+    <h2>How to Start Safely</h2>
+    <ul>
+      <li>Start with a session bankroll of 50–100 bets</li>
+      <li>Use a 1–2% bet size (see our <a href="/bankroll-calculator">bankroll calculator</a>)</li>
+      <li>Set a stop-loss before you start (30–40% of session bankroll)</li>
+      <li>Read the full <a href="/crazy-time-strategy">Crazy Time strategy guide</a> before your first session</li>
+    </ul>
+
+    <StakeCTA variant="card" text="Start Playing Crazy Time on Stake →" />
+
+    <div class="space-y-4 mt-2">
+      <h2>FAQ</h2>
+      {[
+        { q: 'Is Crazy Time easy to understand?', a: 'Yes. The basic concept — pick a segment, wheel spins, win or lose — is straightforward. Bonus rounds add complexity but are explained by the host.' },
+        { q: 'Can I play Crazy Time on mobile?', a: 'Yes. Evolution Gaming\'s Crazy Time is fully mobile-compatible. Stake\'s platform works well on phones and tablets.' },
+        { q: 'What is the minimum bet in Crazy Time?', a: 'Minimum bets vary by casino and table. On Stake, minimums are typically very low — starting under $0.10 per segment.' },
+        { q: 'How often do bonus rounds happen?', a: 'Bonus rounds are rare on any single spin — each bonus segment appears 1–2 times out of 54. In a 100-spin session, expect 4–8 bonus rounds total.' },
+        { q: 'Do I need experience to play Crazy Time?', a: 'No. The game is designed for all players. Watch a few rounds before betting to get comfortable with the pace.' },
+      ].map(faq => (
+        <div class="bg-slate-800 rounded-xl p-4">
+          <p class="font-semibold text-slate-100 mb-1 m-0">{faq.q}</p>
+          <p class="text-slate-400 text-sm m-0">{faq.a}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-10 pt-8 border-t border-slate-700 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+      <a href="/crazy-time-strategy" class="text-amber-400 hover:text-amber-300">→ Crazy Time strategy guide</a>
+      <a href="/crazy-time-rtp" class="text-amber-400 hover:text-amber-300">→ RTP breakdown</a>
+      <a href="/crazy-time-bankroll-strategy" class="text-amber-400 hover:text-amber-300">→ Bankroll management</a>
+      <a href="/where-to-play-crazy-time" class="text-amber-400 hover:text-amber-300">→ Where to play Crazy Time</a>
+    </div>
+
+    <StakeCTA variant="sticky" />
+  </div>
+</BaseLayout>

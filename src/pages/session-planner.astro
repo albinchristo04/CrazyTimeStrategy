@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StakeCTA from '../components/StakeCTA.astro';
+---
+<BaseLayout
+  title="Crazy Time Session Planner — Free Tool 2026"
+  description="Plan your Crazy Time session before you play. Set your bankroll, stop-loss, take-profit, and bet sizing rules in one place."
+>
+  <div class="max-w-3xl mx-auto px-4 py-10">
+    <h1>Crazy Time Session Planner</h1>
+    <p class="text-slate-400 mb-8">Fill in your session details to generate a personal session rules card.</p>
+
+    <div id="planner" class="bg-slate-800 rounded-xl p-6 max-w-lg mx-auto">
+      <div class="space-y-5">
+        <div>
+          <label class="block text-sm font-medium text-slate-300 mb-1">Session Bankroll ($)</label>
+          <input id="bankroll" type="number" min="0" placeholder="e.g. 200"
+            class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-2.5 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-amber-500" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-slate-300 mb-1">Target Profit ($)</label>
+          <input id="profit" type="number" min="0" placeholder="e.g. 100"
+            class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-2.5 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-amber-500" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-slate-300 mb-1">Risk Level</label>
+          <select id="risk"
+            class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-2.5 text-slate-100 focus:outline-none focus:border-amber-500">
+            <option value="low">Conservative (1% bet)</option>
+            <option value="medium" selected>Balanced (2% bet)</option>
+            <option value="high">Aggressive (5% bet)</option>
+          </select>
+        </div>
+        <button onclick="generatePlan()"
+          class="w-full bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold py-3 rounded-xl transition">
+          Generate Session Plan →
+        </button>
+      </div>
+
+      <div id="result" class="hidden mt-6 bg-slate-700/50 rounded-xl p-4 space-y-3 text-sm">
+        <h3 class="font-bold text-slate-100 text-base">Your Session Rules</h3>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="bg-slate-800 rounded-lg p-3">
+            <p class="text-slate-500 text-xs mb-1">Bet Size</p>
+            <p id="r-bet" class="font-bold text-amber-400 text-lg m-0">—</p>
+          </div>
+          <div class="bg-slate-800 rounded-lg p-3">
+            <p class="text-slate-500 text-xs mb-1">Stop-Loss</p>
+            <p id="r-stop" class="font-bold text-red-400 text-lg m-0">—</p>
+          </div>
+          <div class="bg-slate-800 rounded-lg p-3">
+            <p class="text-slate-500 text-xs mb-1">Take-Profit</p>
+            <p id="r-profit" class="font-bold text-green-400 text-lg m-0">—</p>
+          </div>
+          <div class="bg-slate-800 rounded-lg p-3">
+            <p class="text-slate-500 text-xs mb-1">Max Bets</p>
+            <p id="r-bets" class="font-bold text-slate-200 text-lg m-0">—</p>
+          </div>
+        </div>
+        <p id="r-advice" class="text-slate-400 text-xs mt-3"></p>
+      </div>
+    </div>
+
+    <script is:inline>
+      function generatePlan() {
+        const br = parseFloat(document.getElementById('bankroll').value) || 0;
+        const tp = parseFloat(document.getElementById('profit').value) || 0;
+        const risk = document.getElementById('risk').value;
+        if (br <= 0) { alert('Enter a bankroll amount.'); return; }
+
+        const pct = risk === 'low' ? 0.01 : risk === 'medium' ? 0.02 : 0.05;
+        const stopPct = risk === 'low' ? 0.30 : risk === 'medium' ? 0.40 : 0.50;
+        const bet = (br * pct).toFixed(2);
+        const stop = (br * stopPct).toFixed(2);
+        const takeProfit = tp > 0 ? tp.toFixed(2) : (br * 1.0).toFixed(2);
+        const maxBets = Math.floor(br / (br * pct));
+        const advice = risk === 'low'
+          ? 'Focus on the 1 and 2 segments. Use small bonus stakes on Coin Flip.'
+          : risk === 'medium'
+          ? 'Split between 1 segment and one bonus segment each round.'
+          : 'Allocate 50–70% of each bet to your target bonus segment.';
+
+        document.getElementById('r-bet').textContent = '$' + bet;
+        document.getElementById('r-stop').textContent = '-$' + stop;
+        document.getElementById('r-profit').textContent = '+$' + takeProfit;
+        document.getElementById('r-bets').textContent = '~' + maxBets;
+        document.getElementById('r-advice').textContent = advice;
+        document.getElementById('result').classList.remove('hidden');
+      }
+    </script>
+
+    <div class="mt-10 prose prose-invert max-w-none">
+      <h2>How to Use the Session Planner</h2>
+      <p>
+        Enter your bankroll, profit target, and risk level. The planner generates your bet size, stop-loss, and take-profit levels. Follow these rules exactly during your session.
+      </p>
+      <p>
+        For the full theory behind these rules, read our <a href="/crazy-time-bankroll-strategy">bankroll management guide</a> and the complete <a href="/crazy-time-strategy">Crazy Time strategy guide</a>.
+        Understand the <a href="/crazy-time-rtp">RTP breakdown</a> before your first session.
+        Ready to play? <a href="/where-to-play-crazy-time">Find where to play Crazy Time safely</a>.
+      </p>
+    </div>
+
+    <StakeCTA variant="card" />
+    <StakeCTA variant="sticky" />
+  </div>
+</BaseLayout>

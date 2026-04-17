@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StakeCTA from '../components/StakeCTA.astro';
+---
+<BaseLayout
+  title="Crazy Time Bankroll Strategy — Budget & Bet Sizing Guide 2026"
+  description="How to manage your Crazy Time bankroll. Session budgets, stop-loss rules, bet sizing formulas, and the most common mistakes to avoid."
+>
+  <div class="max-w-3xl mx-auto px-4 py-10">
+    <h1>Crazy Time Bankroll Strategy 2026</h1>
+    <p class="text-lg text-slate-300">
+      Bankroll management is the most important part of any <a href="/crazy-time-strategy">Crazy Time strategy</a>. It determines how long you play, how many bonus rounds you see, and whether you walk away with something. This guide covers the core rules every player should follow.
+    </p>
+
+    <h2>Set a Session Bankroll</h2>
+    <p>
+      A session bankroll is the fixed amount you bring to a single session. Never add to it mid-session. Keep it separate from your living money. A good starting session bankroll is 50–100 bets worth of your chosen bet size.
+    </p>
+    <p>
+      Use the <a href="/bankroll-calculator">bankroll calculator</a> to calculate your bet size from your session bankroll automatically.
+    </p>
+
+    <h2>Bet Sizing Rules</h2>
+    <ul>
+      <li><strong>Conservative:</strong> 1% of session bankroll per round. Longest sessions, lowest risk.</li>
+      <li><strong>Balanced:</strong> 2% per round. Recommended starting point for most players.</li>
+      <li><strong>Aggressive:</strong> 3–5% per round. For experienced players with a dedicated bonus hunt budget.</li>
+    </ul>
+    <p>
+      The correct bet size depends on your session bankroll and risk tolerance. Check the <a href="/crazy-time-rtp">RTP breakdown</a> to understand your expected return before choosing a risk level.
+    </p>
+
+    <h2>Stop-Loss Rules</h2>
+    <p>
+      A stop-loss is the maximum amount you are willing to lose in one session. Once hit, you stop — no exceptions. Recommended stop-loss levels:
+    </p>
+    <ul>
+      <li>Conservative: stop at 30% loss of session bankroll</li>
+      <li>Balanced: stop at 40% loss</li>
+      <li>Aggressive: stop at 50% loss</li>
+    </ul>
+
+    <h2>Take-Profit Rules</h2>
+    <p>
+      Setting a take-profit is just as important as a stop-loss. If you hit a bonus round win that doubles your session bankroll, consider stopping. Most players who continue after a big win give it all back. Recommended: stop at 100–150% profit.
+    </p>
+
+    <h2>Common Bankroll Mistakes</h2>
+    <ul>
+      <li>Not setting a stop-loss before starting</li>
+      <li>Increasing bet size to recover losses (Martingale trap)</li>
+      <li>Playing with money you cannot afford to lose</li>
+      <li>Adding to your session bankroll after busting it</li>
+      <li>Playing without a <a href="/session-planner">session plan</a></li>
+    </ul>
+
+    <StakeCTA variant="card" text="Play Crazy Time on Stake →" />
+
+    <div class="space-y-4 mt-2">
+      <h2>FAQ</h2>
+      {[
+        { q: 'How much money do I need to play Crazy Time?', a: 'Minimum: 50 bets. If your bet is $1, bring $50. If your bet is $5, bring $250. More is better — more rounds = more bonus exposure.' },
+        { q: 'What is the best stop-loss for Crazy Time?', a: 'For most players, 30–40% of session bankroll is the right stop-loss. This allows enough rounds to hit bonus rounds without risking your full budget.' },
+        { q: 'Should I use a flat bet or vary my bets?', a: 'Flat betting is more sustainable. Varying bets based on results or feelings is a form of emotional gambling.' },
+        { q: 'Can I split my bankroll across multiple days?', a: 'Yes. Dividing your total budget into daily session amounts is smart bankroll management.' },
+        { q: 'What happens if I bust my session bankroll?', a: 'Stop playing for the day. Do not deposit more. Wait for your next scheduled session.' },
+      ].map(faq => (
+        <div class="bg-slate-800 rounded-xl p-4">
+          <p class="font-semibold text-slate-100 mb-1 m-0">{faq.q}</p>
+          <p class="text-slate-400 text-sm m-0">{faq.a}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-10 pt-8 border-t border-slate-700 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+      <a href="/crazy-time-strategy" class="text-amber-400 hover:text-amber-300">→ Crazy Time strategy guide</a>
+      <a href="/crazy-time-rtp" class="text-amber-400 hover:text-amber-300">→ RTP breakdown</a>
+      <a href="/where-to-play-crazy-time" class="text-amber-400 hover:text-amber-300">→ Where to play Crazy Time</a>
+      <a href="/crazy-time-predictor" class="text-amber-400 hover:text-amber-300">→ Live Crazy Time tracker</a>
+    </div>
+
+    <StakeCTA variant="sticky" />
+  </div>
+</BaseLayout>

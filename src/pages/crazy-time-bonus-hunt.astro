@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StakeCTA from '../components/StakeCTA.astro';
+---
+<BaseLayout
+  title="Crazy Time Bonus Hunt Strategy 2026 — Maximize Bonus Rounds"
+  description="How to bonus hunt in Crazy Time. Which bonus round to target, how to size your bonus bets, and when bonus hunting makes sense."
+>
+  <div class="max-w-3xl mx-auto px-4 py-10">
+    <h1>Crazy Time Bonus Hunt Strategy 2026</h1>
+    <p class="text-lg text-slate-300">
+      Bonus hunting means allocating most of your bet to bonus segments and accepting main wheel losses in exchange for bigger bonus round payouts. This guide explains when it works, which bonus to target, and how to size your bets.
+    </p>
+
+    <h2>How Bonus Hunting Works</h2>
+    <p>
+      Instead of spreading bets across the wheel, you focus on 1–2 bonus segments per round. You lose most spins (the bonus segments are rare), but when you hit one, the payout is much larger because your bonus stake is proportionally higher.
+    </p>
+
+    <h2>Which Bonus to Target</h2>
+    <ul>
+      <li><strong>Crazy Time bonus:</strong> Highest upside (up to ×20,000). Hardest to hit (1 segment out of 54). Best for pure high-risk bonus hunting.</li>
+      <li><strong>Pachinko:</strong> Appears twice on the wheel. Good balance of hit rate and multiplier potential (up to ×10,000).</li>
+      <li><strong>Cash Hunt:</strong> Appears twice. More predictable payout range. Good for moderate bonus hunters.</li>
+      <li><strong>Coin Flip:</strong> Appears twice. Lowest max multiplier but highest hit rate per bet among bonus segments.</li>
+    </ul>
+
+    <h2>Bonus Bet Sizing</h2>
+    <p>
+      For a bonus hunt, allocate 50–70% of your total round bet to your target bonus segment. Put the remainder on the 1 segment to extend your session between bonus hits. Use the <a href="/bankroll-calculator">bankroll calculator</a> to set a sustainable total round bet.
+    </p>
+
+    <h2>When Bonus Hunting Makes Sense</h2>
+    <ul>
+      <li>You have a dedicated bonus hunt budget separate from your main bankroll</li>
+      <li>You understand that most sessions will be losing sessions</li>
+      <li>You are comfortable with high variance</li>
+    </ul>
+
+    <h2>Mistakes to Avoid</h2>
+    <ul>
+      <li>Bonus hunting with your full bankroll — you need a hard stop-loss</li>
+      <li>Switching targets mid-session based on recent results</li>
+      <li>Expecting the bonus to hit "soon" based on gap analysis — each spin is independent</li>
+    </ul>
+
+    <StakeCTA variant="card" text="Bonus Hunt on Stake →" />
+
+    <div class="space-y-4 mt-2">
+      <h2>FAQ</h2>
+      {[
+        { q: 'What is the best Crazy Time bonus to hunt?', a: 'Pachinko offers the best balance of hit rate and multiplier range for most players. For pure high-risk play, target the Crazy Time bonus.' },
+        { q: 'How much should I bet on the bonus segment?', a: 'Allocate 50–70% of your total round bet to the target bonus segment. Never bet more than you are willing to lose on each spin.' },
+        { q: 'How long does a typical bonus hunt session last?', a: 'Highly variable. With Crazy Time as the target, you might go 30–60 rounds between hits. Set a round limit before starting.' },
+        { q: 'Can I bonus hunt on all four segments at once?', a: 'You can, but it multiplies your round bet. Keep total bet size within your bankroll limits.' },
+        { q: 'Is bonus hunting better than balanced betting?', a: 'Not for most players. Bonus hunting has higher variance and a faster burn rate. It suits experienced players with a dedicated high-risk budget.' },
+      ].map(faq => (
+        <div class="bg-slate-800 rounded-xl p-4">
+          <p class="font-semibold text-slate-100 mb-1 m-0">{faq.q}</p>
+          <p class="text-slate-400 text-sm m-0">{faq.a}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-10 pt-8 border-t border-slate-700 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+      <a href="/crazy-time-strategy" class="text-amber-400 hover:text-amber-300">→ Crazy Time strategy guide</a>
+      <a href="/crazy-time-rtp" class="text-amber-400 hover:text-amber-300">→ RTP breakdown</a>
+      <a href="/crazy-time-bankroll-strategy" class="text-amber-400 hover:text-amber-300">→ Bankroll management</a>
+      <a href="/where-to-play-crazy-time" class="text-amber-400 hover:text-amber-300">→ Where to play Crazy Time</a>
+    </div>
+
+    <StakeCTA variant="sticky" />
+  </div>
+</BaseLayout>

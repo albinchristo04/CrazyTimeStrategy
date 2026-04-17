@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StakeCTA from '../components/StakeCTA.astro';
+---
+<BaseLayout
+  title="Crazy Time Probability — How the Math Works 2026"
+  description="Crazy Time probability explained simply. Wheel math, expected value, variance, and what probability means for your betting decisions."
+>
+  <div class="max-w-3xl mx-auto px-4 py-10">
+    <h1>Crazy Time Probability Explained 2026</h1>
+    <p class="text-lg text-slate-300">
+      Understanding Crazy Time probability helps you set realistic expectations and make better betting decisions. This guide covers the core math — no advanced statistics required.
+    </p>
+
+    <h2>How Probability Works in Crazy Time</h2>
+    <p>
+      The Crazy Time wheel has 54 segments. Each segment has a fixed probability based on how many times it appears. The 1 segment appears 24 times, giving it a 44.4% probability. The Crazy Time bonus appears once, giving it 1.85%.
+    </p>
+    <p>
+      Each spin is a completely independent event. The wheel has no memory. A segment that has not hit in 30 rounds has the same probability on the next spin as it always does. This is called the independence of random events.
+    </p>
+
+    <h2>Expected Value</h2>
+    <p>
+      Expected value (EV) is the average result of a bet over a large number of trials. For the 2 segment:
+    </p>
+    <ul>
+      <li>Probability of winning: 24.1%</li>
+      <li>Payout: 2:1 (win $2 per $1 bet)</li>
+      <li>EV = (0.241 × 2) + (0.759 × -1) = -0.277</li>
+    </ul>
+    <p>
+      This means for every $1 bet on the 2 segment, the expected return is $0.962 — matching the published RTP of ~96.2%. The math is consistent. Check the full <a href="/crazy-time-rtp">RTP breakdown</a> for all segments.
+    </p>
+
+    <h2>Variance</h2>
+    <p>
+      Variance measures how much results swing around the expected value. Bonus rounds have very high variance — they hit rarely but pay a lot. Main wheel segments have low variance — they hit often and pay small amounts.
+    </p>
+    <p>
+      High variance means you need a larger bankroll to survive the swings and reach the long-run expected value. This is why <a href="/crazy-time-bankroll-strategy">bankroll management</a> is critical.
+    </p>
+
+    <h2>The Gambler's Fallacy</h2>
+    <p>
+      The gambler's fallacy is the false belief that past results affect future probabilities. In Crazy Time, if the Crazy Time bonus has not hit in 100 rounds, it is not "due" — each spin is still a 1.85% chance. Our <a href="/crazy-time-predictor">live tracker</a> shows frequency data to inform your session, not to predict the next spin.
+    </p>
+
+    <StakeCTA variant="card" text="Play Crazy Time on Stake →" />
+
+    <div class="space-y-4 mt-2">
+      <h2>FAQ</h2>
+      {[
+        { q: 'Does probability change based on recent results?', a: 'No. Each spin is independent. The wheel has no memory of past results.' },
+        { q: 'What is the probability of hitting any bonus in 10 rounds?', a: 'With a 13% chance per round, the probability of hitting at least one bonus in 10 rounds is approximately 1 - (0.87^10) = ~74%.' },
+        { q: 'Can probability help me choose which segment to bet on?', a: 'It tells you the expected frequency and RTP. The 2 and 10 segments have the best RTP. The Crazy Time bonus has the highest variance and upside.' },
+        { q: 'What does variance mean for my session?', a: 'Higher variance means bigger swings. A large bankroll relative to your bet size is the only way to survive high-variance sessions.' },
+        { q: 'Is Crazy Time beatable using probability?', a: 'No. The house edge is built into every bet. Probability analysis helps you understand the game — it does not create a winning edge.' },
+      ].map(faq => (
+        <div class="bg-slate-800 rounded-xl p-4">
+          <p class="font-semibold text-slate-100 mb-1 m-0">{faq.q}</p>
+          <p class="text-slate-400 text-sm m-0">{faq.a}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-10 pt-8 border-t border-slate-700 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+      <a href="/crazy-time-strategy" class="text-amber-400 hover:text-amber-300">→ Crazy Time strategy guide</a>
+      <a href="/crazy-time-rtp" class="text-amber-400 hover:text-amber-300">→ RTP breakdown</a>
+      <a href="/crazy-time-bankroll-strategy" class="text-amber-400 hover:text-amber-300">→ Bankroll management</a>
+      <a href="/crazy-time-predictor" class="text-amber-400 hover:text-amber-300">→ Live Crazy Time tracker</a>
+    </div>
+    <StakeCTA variant="sticky" />
+  </div>
+</BaseLayout>

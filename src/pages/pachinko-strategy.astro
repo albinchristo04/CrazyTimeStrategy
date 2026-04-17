@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StakeCTA from '../components/StakeCTA.astro';
+---
+<BaseLayout
+  title="Pachinko Strategy — Crazy Time Bonus Guide 2026"
+  description="Best Pachinko strategy for Crazy Time. How the Pachinko bonus works, max payout, and how to size your Pachinko bet."
+>
+  <div class="max-w-3xl mx-auto px-4 py-10">
+    <h1>Pachinko Strategy for Crazy Time 2026</h1>
+    <p class="text-lg text-slate-300">
+      Pachinko is a bonus round in Crazy Time where a physical ball drops through a pegboard and lands on a multiplier. It has the second-highest max payout of any bonus round at ×10,000. This guide covers how it works and how to bet it.
+    </p>
+
+    <h2>How Pachinko Works</h2>
+    <p>
+      When the wheel lands on Pachinko, a physical ball is dropped from the top of a large pegboard. The ball bounces down through metal pegs and lands in one of several slots at the bottom, each with a multiplier value.
+    </p>
+    <p>
+      If the top slot showed a "double" before the main spin, all base multipliers at the bottom are doubled before the ball drops. This can push the maximum payout from ×10,000 to ×20,000+.
+    </p>
+
+    <h2>Pachinko Bet Sizing</h2>
+    <p>
+      Pachinko appears on 2 of 54 segments (~3.7% per spin). The high max payout makes it attractive for bonus hunters who want large upside:
+    </p>
+    <ul>
+      <li>Conservative: allocate 20% of round bet to Pachinko as a passive bonus stake</li>
+      <li>Bonus hunter: allocate 50–70% of round bet to Pachinko, keep remainder on 1 segment</li>
+    </ul>
+
+    <h2>Why Pachinko Is the Best Bonus for High-Value Hunting</h2>
+    <p>
+      Pachinko has the same hit rate as Coin Flip and Cash Hunt (2 segments each), but a significantly higher max multiplier. For players willing to accept high variance, Pachinko offers better theoretical upside per unit of bonus stake. Read the <a href="/crazy-time-bonus-rounds">full bonus rounds breakdown</a> for a comparison.
+    </p>
+
+    <StakeCTA variant="card" text="Hunt the Pachinko Bonus on Stake →" />
+
+    <div class="space-y-4 mt-2">
+      <h2>FAQ</h2>
+      {[
+        { q: 'How often does Pachinko hit?', a: 'Pachinko appears on 2 of 54 segments — about 3.7% per spin, roughly once every 27 rounds on average.' },
+        { q: 'What is the maximum Pachinko payout?', a: 'The base maximum is ×10,000. With a top slot double active, this can reach ×20,000 or more.' },
+        { q: 'Can the ball be predicted or influenced?', a: 'No. The ball path through the pegboard is physically random. It cannot be predicted or influenced.' },
+        { q: 'Is Pachinko better than Cash Hunt?', a: 'Pachinko has a higher max payout potential. Cash Hunt has more spread across its multiplier range. For maximum upside, Pachinko is better.' },
+        { q: 'What happens if Pachinko lands on the lowest multiplier?', a: 'You receive that multiplier on your Pachinko stake — it can be as low as ×2. This is the high-variance nature of the bonus.' },
+      ].map(faq => (
+        <div class="bg-slate-800 rounded-xl p-4">
+          <p class="font-semibold text-slate-100 mb-1 m-0">{faq.q}</p>
+          <p class="text-slate-400 text-sm m-0">{faq.a}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-10 pt-8 border-t border-slate-700 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+      <a href="/crazy-time-strategy" class="text-amber-400 hover:text-amber-300">→ Crazy Time strategy guide</a>
+      <a href="/crazy-time-rtp" class="text-amber-400 hover:text-amber-300">→ RTP breakdown</a>
+      <a href="/crazy-time-bankroll-strategy" class="text-amber-400 hover:text-amber-300">→ Bankroll management</a>
+      <a href="/where-to-play-crazy-time" class="text-amber-400 hover:text-amber-300">→ Where to play Crazy Time</a>
+    </div>
+    <StakeCTA variant="sticky" />
+  </div>
+</BaseLayout>

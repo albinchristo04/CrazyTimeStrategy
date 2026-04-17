@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StakeCTA from '../components/StakeCTA.astro';
+---
+<BaseLayout
+  title="Crazy Time Tips — 10 Tips Every Player Should Know in 2026"
+  description="10 practical Crazy Time tips covering bankroll, bonus rounds, bet sizing, and session discipline. Clear and direct — no fluff."
+>
+  <div class="max-w-3xl mx-auto px-4 py-10">
+    <h1>Crazy Time Tips for 2026</h1>
+    <p class="text-lg text-slate-300">
+      Ten practical tips that improve how you play Crazy Time — covering session discipline, bankroll rules, and bonus round decisions.
+    </p>
+
+    <h2>10 Crazy Time Tips</h2>
+    <div class="space-y-4">
+      {[
+        { n: 1,  title: 'Set a session bankroll before you start',     body: 'Decide your maximum spend before opening the game. Never add to it mid-session.' },
+        { n: 2,  title: 'Use the 2% rule for bet sizing',              body: 'Bet 2% of your session bankroll per round. This gives you 50 rounds to hit bonus rounds. Use the bankroll calculator for your exact number.' },
+        { n: 3,  title: 'Always set a stop-loss',                      body: 'Stop at 30–40% loss of your session bankroll. Set a timer or round limit if it helps you stick to it.' },
+        { n: 4,  title: 'Set a take-profit target too',                body: 'If you double your session bankroll, consider stopping. Most players who continue after a big win give it back.' },
+        { n: 5,  title: 'Cover at least one bonus segment per round',  body: 'A small bonus stake active every round means you capture bonus round value when it hits. Even a small bonus bet matters.' },
+        { n: 6,  title: 'Do not bet all segments simultaneously',      body: 'Betting all 8 segments creates a guaranteed mathematical loss per round due to the house edge.' },
+        { n: 7,  title: 'Understand the RTP before you play',         body: 'The 2 and 10 segments have the best RTP (~96%). Check the full RTP breakdown to see where your money goes.' },
+        { n: 8,  title: 'Ignore hot/cold patterns as guarantees',      body: 'Each spin is independent. A segment that has not hit in 30 rounds is not "due". Use our live tracker for frequency data, not predictions.' },
+        { n: 9,  title: 'Play at a steady pace',                      body: 'Fast sessions burn bankrolls faster. You can pause between rounds. Take time to review the result before the next bet.' },
+        { n: 10, title: 'Pick one strategy and stick to it',           body: 'Switching strategies mid-session based on results is emotional, not strategic. Choose your approach before the session and follow it.' },
+      ].map(tip => (
+        <div class="bg-slate-800 rounded-xl p-4 flex gap-4">
+          <span class="text-2xl font-extrabold text-amber-500 shrink-0 w-8 text-center">{tip.n}</span>
+          <div>
+            <p class="font-semibold text-slate-100 mb-1 m-0">{tip.title}</p>
+            <p class="text-slate-400 text-sm m-0">{tip.body}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <StakeCTA variant="card" text="Apply These Tips on Stake →" />
+
+    <div class="mt-10 pt-8 border-t border-slate-700 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+      <a href="/crazy-time-strategy" class="text-amber-400 hover:text-amber-300">→ Crazy Time strategy guide</a>
+      <a href="/crazy-time-rtp" class="text-amber-400 hover:text-amber-300">→ RTP breakdown</a>
+      <a href="/crazy-time-bankroll-strategy" class="text-amber-400 hover:text-amber-300">→ Bankroll management</a>
+      <a href="/where-to-play-crazy-time" class="text-amber-400 hover:text-amber-300">→ Where to play Crazy Time</a>
+    </div>
+    <StakeCTA variant="sticky" />
+  </div>
+</BaseLayout>

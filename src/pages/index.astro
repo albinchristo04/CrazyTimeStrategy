@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StakeCTA from '../components/StakeCTA.astro';
+import HomepagePredictor from '../components/HomepagePredictor';
+---
+<BaseLayout
+  title="Crazy Time Strategy Guides, Tips & Tools"
+  description="Learn smarter bankroll management, bonus strategies, RTP insights, and casino recommendations for Crazy Time."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-800 to-slate-900 py-16 px-4 text-center">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-slate-100 mb-4">
+        Crazy Time Strategy Guides, Tips & Tools
+      </h1>
+      <p class="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
+        Learn smarter bankroll management, bonus strategies, RTP insights, and casino recommendations — including the only live RNG pattern tracker.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a
+          href="/crazy-time-strategy"
+          class="bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold py-3 px-8 rounded-xl transition text-base"
+        >
+          Read Strategy Guide →
+        </a>
+        <a
+          href="/bankroll-calculator"
+          class="bg-slate-700 hover:bg-slate-600 text-slate-100 font-semibold py-3 px-8 rounded-xl transition text-base"
+        >
+          Use Calculator
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-6xl mx-auto px-4 py-12 space-y-16">
+
+    <!-- Section 1: Popular Guides -->
+    <section>
+      <h2 class="text-2xl font-bold text-slate-100 mb-6">Popular Guides</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {[
+          { href: '/best-crazy-time-strategy',     title: 'Best Strategy',    desc: 'Proven approaches ranked by risk level.' },
+          { href: '/crazy-time-rtp',               title: 'RTP Guide',        desc: 'Understand return-to-player and odds.' },
+          { href: '/crazy-time-bankroll-strategy', title: 'Bankroll Guide',   desc: 'Manage your budget like a pro.' },
+          { href: '/crazy-time-bonus-hunt',        title: 'Bonus Hunt Guide', desc: 'Maximize bonus round value.' },
+        ].map(card => (
+          <a
+            href={card.href}
+            class="bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-amber-500/40 rounded-xl p-5 transition group block"
+          >
+            <h3 class="font-bold text-slate-100 mb-2 group-hover:text-amber-400 transition mt-0">{card.title}</h3>
+            <p class="text-slate-400 text-sm m-0">{card.desc}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Section 2: Featured Casino -->
+    <section>
+      <h2 class="text-2xl font-bold text-slate-100 mb-2">Recommended Casino</h2>
+      <StakeCTA variant="card" text="Play Crazy Time on Stake — Instant Sign Up" />
+    </section>
+
+    <!-- Section 3: Live Predictor Teaser -->
+    <section>
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-2xl font-bold text-slate-100">Live Crazy Time Tracker</h2>
+        <a href="/crazy-time-predictor" class="text-sm text-amber-400 hover:text-amber-300 transition">Full predictor →</a>
+      </div>
+      <p class="text-slate-400 mb-4">
+        See live Crazy Time stats and our next-result pattern analysis. Updated on demand.
+      </p>
+      <HomepagePredictor client:load />
+    </section>
+
+    <!-- Section 4: Latest Articles -->
+    <section>
+      <h2 class="text-2xl font-bold text-slate-100 mb-6">Latest Articles</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {[
+          { href: '/blog/best-crazy-time-strategy-2026',    title: 'Best Crazy Time Strategy in 2026',      silo: 'Strategy' },
+          { href: '/blog/crazy-time-rtp-explained',         title: 'Crazy Time RTP Explained Clearly',      silo: 'Math & RTP' },
+          { href: '/blog/how-to-play-crazy-time-beginners', title: 'How to Play Crazy Time — Step by Step', silo: 'Beginners' },
+          { href: '/blog/coin-flip-strategy-crazy-time',    title: 'Best Coin Flip Strategy in Crazy Time', silo: 'Bonuses' },
+          { href: '/blog/crazy-time-results-today',         title: 'Crazy Time Results Today — Live Stats',  silo: 'Predictor' },
+          { href: '/blog/how-to-play-crazy-time-stake',     title: 'How to Play Crazy Time on Stake',       silo: 'Beginners' },
+        ].map(post => (
+          <a
+            href={post.href}
+            class="bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-xl p-4 transition block"
+          >
+            <span class="text-xs text-amber-500 font-semibold uppercase tracking-wider">{post.silo}</span>
+            <h3 class="font-semibold text-slate-100 mt-1 text-sm leading-snug m-0">{post.title}</h3>
+          </a>
+        ))}
+      </div>
+      <div class="text-center mt-6">
+        <a href="/blog" class="text-amber-400 hover:text-amber-300 transition text-sm font-medium">
+          View all articles →
+        </a>
+      </div>
+    </section>
+
+    <!-- Section 5: Tools Preview -->
+    <section>
+      <h2 class="text-2xl font-bold text-slate-100 mb-6">Free Strategy Tools</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {[
+          { href: '/crazy-time-predictor',  title: 'Live RNG Tracker',     desc: 'See which segments are hot, cold, or overdue.', badge: '🔴 Live' },
+          { href: '/bankroll-calculator',   title: 'Bankroll Calculator',   desc: 'Get your recommended bet size instantly.' },
+          { href: '/risk-level-calculator', title: 'Risk Level Calculator', desc: 'Conservative, balanced, or aggressive?' },
+          { href: '/session-planner',       title: 'Session Planner',       desc: 'Set stop-loss, take-profit, and bet rules.' },
+          { href: '/bet-size-calculator',   title: 'Bet Size Calculator',   desc: 'Dial in the right bet for your bankroll.' },
+        ].map(tool => (
+          <a
+            href={tool.href}
+            class="bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-amber-500/40 rounded-xl p-5 transition block"
+          >
+            <div class="flex items-center gap-2 mb-2">
+              <h3 class="font-bold text-slate-100 m-0">{tool.title}</h3>
+              {tool.badge && (
+                <span class="text-xs bg-red-500 text-white px-2 py-0.5 rounded-full font-semibold">{tool.badge}</span>
+              )}
+            </div>
+            <p class="text-slate-400 text-sm m-0">{tool.desc}</p>
+            <span class="text-amber-400 text-sm mt-3 inline-block font-medium">Try free →</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+  </div>
+
+  <StakeCTA variant="sticky" />
+</BaseLayout>

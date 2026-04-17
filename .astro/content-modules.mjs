@@ -1,0 +1,13 @@
+
+export default new Map([
+["src/content/blog/best-casino-crazy-time-2026.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fblog%2Fbest-casino-crazy-time-2026.mdx&astroContentModuleFlag=true")],
+["src/content/blog/best-crazy-time-strategy-2026.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fblog%2Fbest-crazy-time-strategy-2026.mdx&astroContentModuleFlag=true")],
+["src/content/blog/coin-flip-strategy-crazy-time.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fblog%2Fcoin-flip-strategy-crazy-time.mdx&astroContentModuleFlag=true")],
+["src/content/blog/crazy-time-bankroll-strategy-guide.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fblog%2Fcrazy-time-bankroll-strategy-guide.mdx&astroContentModuleFlag=true")],
+["src/content/blog/crazy-time-odds-explained.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fblog%2Fcrazy-time-odds-explained.mdx&astroContentModuleFlag=true")],
+["src/content/blog/crazy-time-predictor-how-it-works.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fblog%2Fcrazy-time-predictor-how-it-works.mdx&astroContentModuleFlag=true")],
+["src/content/blog/crazy-time-results-today.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fblog%2Fcrazy-time-results-today.mdx&astroContentModuleFlag=true")],
+["src/content/blog/crazy-time-rtp-explained.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fblog%2Fcrazy-time-rtp-explained.mdx&astroContentModuleFlag=true")],
+["src/content/blog/how-to-play-crazy-time-beginners.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fblog%2Fhow-to-play-crazy-time-beginners.mdx&astroContentModuleFlag=true")],
+["src/content/blog/how-to-play-crazy-time-stake.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fblog%2Fhow-to-play-crazy-time-stake.mdx&astroContentModuleFlag=true")]]);
+		

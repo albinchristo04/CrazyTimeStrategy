@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StakeCTA from '../components/StakeCTA.astro';
+import { BASE_RATES, SEGMENT_LABELS } from '../lib/constants';
+import type { Segment } from '../lib/types';
+---
+<BaseLayout
+  title="Crazy Time RTP Explained — Odds, House Edge & Payouts 2026"
+  description="Crazy Time RTP explained clearly. Exact return-to-player percentages, house edge per segment, and what the odds mean for your session."
+>
+  <div class="max-w-3xl mx-auto px-4 py-10">
+    <h1>Crazy Time RTP Explained for 2026</h1>
+    <p class="text-lg text-slate-300">
+      RTP (Return to Player) tells you the percentage of total bets paid back as winnings over time. This page breaks down the exact RTP per segment, house edge, and what these numbers mean for your session strategy.
+    </p>
+
+    <h2>RTP Per Segment</h2>
+    <div class="overflow-x-auto mb-8">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-slate-400 border-b border-slate-700 text-left">
+            <th class="pb-2 pr-4">Segment</th>
+            <th class="pb-2 pr-4">Wheel Frequency</th>
+            <th class="pb-2 pr-4">Payout</th>
+            <th class="pb-2">RTP</th>
+          </tr>
+        </thead>
+        <tbody class="text-slate-300">
+          {[
+            { seg: '1',         payout: '1:1',          rtp: '94.4%' },
+            { seg: '2',         payout: '2:1',          rtp: '96.2%' },
+            { seg: '5',         payout: '5:1',          rtp: '94.4%' },
+            { seg: '10',        payout: '10:1',         rtp: '96.3%' },
+            { seg: 'CoinFlip',  payout: 'Bonus (×2–×1000)', rtp: '95.7%' },
+            { seg: 'CashHunt',  payout: 'Bonus (×10+)',  rtp: '95.5%' },
+            { seg: 'Pachinko',  payout: 'Bonus (×2–×10000)', rtp: '94.3%' },
+            { seg: 'CrazyTime', payout: 'Bonus (up to ×20000)', rtp: '94.4%' },
+          ].map(row => (
+            <tr class="border-b border-slate-700/50">
+              <td class="py-3 pr-4 font-semibold text-slate-100">
+                {SEGMENT_LABELS[row.seg as Segment]}
+              </td>
+              <td class="py-3 pr-4 text-slate-400">
+                {(BASE_RATES[row.seg as Segment] * 100).toFixed(1)}%
+              </td>
+              <td class="py-3 pr-4">{row.payout}</td>
+              <td class="py-3 font-semibold text-amber-400">{row.rtp}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <h2>What RTP Means in Practice</h2>
+    <p>
+      A 96% RTP means for every $100 wagered over a long session, you can expect $96 back on average. The remaining $4 is the house edge. This is a theoretical long-term average — in any single session, results can vary wildly in either direction.
+    </p>
+    <p>
+      For <a href="/crazy-time-strategy">strategy purposes</a>, the main wheel segments (1, 2, 5, 10) have RTPs of 94–96%. The bonus rounds have similar RTPs but offer massive variance — they can pay 100× to 20,000× your bonus stake on a single spin.
+    </p>
+
+    <h2>House Edge Explained</h2>
+    <p>
+      The house edge is 100% minus RTP. For Crazy Time, this averages around 4–6% depending on the bet type. This means the casino keeps 4–6 cents per $1 wagered over time.
+    </p>
+
+    <h2>Using RTP in Your Strategy</h2>
+    <p>
+      RTP does not tell you what will happen in your next session — it is a long-run average. What it does tell you:
+    </p>
+    <ul>
+      <li>Betting on the 2 or 10 segments gives slightly better RTP than the 1 and 5</li>
+      <li>Bonus rounds have high variance but similar RTPs — your bankroll is better spent chasing them with dedicated bonus stakes</li>
+      <li>Use the <a href="/crazy-time-predictor">live Crazy Time tracker</a> to see current frequency data alongside these expected values</li>
+    </ul>
+
+    <StakeCTA variant="card" text="Play Crazy Time on Stake →" />
+
+    <div class="space-y-4 mt-2">
+      <h2>FAQ</h2>
+      {[
+        { q: 'What is the overall Crazy Time RTP?', a: 'The overall game RTP ranges from 94.3% to 96.3% depending on which segments you bet on.' },
+        { q: 'Which Crazy Time segment has the best RTP?', a: 'The 10 segment has the highest published RTP at 96.3%, followed closely by the 2 segment at 96.2%.' },
+        { q: 'Does RTP change between sessions?', a: 'No. RTP is a fixed mathematical property of the game. Individual session results are random.' },
+        { q: 'Is the house edge different at different times of day?', a: 'No. The wheel odds and payouts are constant. Time of day has no effect on RTP.' },
+        { q: 'Can I use RTP to predict the next spin?', a: 'No. Each spin is independent. RTP describes long-run averages, not short-run patterns. Use our tracker for frequency data.' },
+      ].map(faq => (
+        <div class="bg-slate-800 rounded-xl p-4">
+          <p class="font-semibold text-slate-100 mb-1 m-0">{faq.q}</p>
+          <p class="text-slate-400 text-sm m-0">{faq.a}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-10 pt-8 border-t border-slate-700 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+      <a href="/crazy-time-strategy" class="text-amber-400 hover:text-amber-300">→ Crazy Time strategy guide</a>
+      <a href="/crazy-time-bankroll-strategy" class="text-amber-400 hover:text-amber-300">→ Bankroll management</a>
+      <a href="/where-to-play-crazy-time" class="text-amber-400 hover:text-amber-300">→ Where to play Crazy Time</a>
+      <a href="/crazy-time-predictor" class="text-amber-400 hover:text-amber-300">→ Live Crazy Time tracker</a>
+    </div>
+
+    <StakeCTA variant="sticky" />
+  </div>
+</BaseLayout>

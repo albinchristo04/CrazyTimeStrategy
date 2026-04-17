@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StakeCTA from '../components/StakeCTA.astro';
+---
+<BaseLayout
+  title="Top Slot Strategy — Crazy Time Multiplier Guide 2026"
+  description="How the Crazy Time top slot works, how multipliers apply, and how to factor the top slot into your betting strategy."
+>
+  <div class="max-w-3xl mx-auto px-4 py-10">
+    <h1>Crazy Time Top Slot Strategy 2026</h1>
+    <p class="text-lg text-slate-300">
+      The top slot is a mini-wheel that spins before every main wheel spin. It can apply multipliers to number segments or double all multipliers in an upcoming bonus round. Understanding it improves your session strategy.
+    </p>
+
+    <h2>How the Top Slot Works</h2>
+    <p>
+      Before each main wheel spin, the top slot (a horizontal spinning display) locks on a result. It shows a segment name paired with a multiplier — for example, "5 — ×4" or "Coin Flip — double". The possible results are:
+    </p>
+    <ul>
+      <li>Any number segment (1, 2, 5, 10) with a multiplier — that segment pays the boosted amount if the main wheel lands on it</li>
+      <li>Any bonus segment with "double" — all multipliers in that bonus round are doubled if it triggers</li>
+    </ul>
+
+    <h2>Top Slot Strategy Considerations</h2>
+    <p>
+      You cannot control or predict the top slot. What you can do is note the result before you finalize your bets. In live game play, the top slot result is revealed during the betting phase — you have time to adjust.
+    </p>
+    <p>
+      If the top slot shows "Crazy Time — double", a small Crazy Time bonus bet becomes significantly more valuable that round. Some players increase their bonus stake for that spin when a double is active.
+    </p>
+
+    <h2>Common Misunderstandings</h2>
+    <ul>
+      <li>The top slot result is random — it is not based on recent results or patterns</li>
+      <li>A top slot multiplier only applies to that segment for that specific round — it resets next round</li>
+      <li>A "double" on a bonus segment only applies if that bonus is triggered in the same round</li>
+    </ul>
+
+    <StakeCTA variant="card" text="Play Crazy Time on Stake →" />
+
+    <div class="space-y-4 mt-2">
+      <h2>FAQ</h2>
+      {[
+        { q: 'Does the top slot always show a multiplier?', a: 'Yes. The top slot spins every round and always lands on a segment + multiplier or a bonus + double.' },
+        { q: 'Can the top slot show a multiplier for a bonus round I did not bet on?', a: 'Yes. You receive the bonus multiplier boost only if you bet on the triggering bonus segment.' },
+        { q: 'Should I change my bet based on the top slot result?', a: 'Some players increase their bonus stake when a "double" is shown for their target bonus. This is a valid tactical adjustment within your session budget.' },
+        { q: 'How high can top slot multipliers go?', a: 'Top slot multipliers vary. They commonly show ×2 to ×7 on number segments, and "double" for bonus segments.' },
+        { q: 'Is the top slot result part of the main wheel RTP calculation?', a: 'Yes. The top slot is factored into the published RTP figures for each segment.' },
+      ].map(faq => (
+        <div class="bg-slate-800 rounded-xl p-4">
+          <p class="font-semibold text-slate-100 mb-1 m-0">{faq.q}</p>
+          <p class="text-slate-400 text-sm m-0">{faq.a}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-10 pt-8 border-t border-slate-700 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+      <a href="/crazy-time-strategy" class="text-amber-400 hover:text-amber-300">→ Crazy Time strategy guide</a>
+      <a href="/crazy-time-rtp" class="text-amber-400 hover:text-amber-300">→ RTP breakdown</a>
+      <a href="/crazy-time-bankroll-strategy" class="text-amber-400 hover:text-amber-300">→ Bankroll management</a>
+      <a href="/where-to-play-crazy-time" class="text-amber-400 hover:text-amber-300">→ Where to play Crazy Time</a>
+    </div>
+    <StakeCTA variant="sticky" />
+  </div>
+</BaseLayout>

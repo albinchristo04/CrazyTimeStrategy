@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StakeCTA from '../components/StakeCTA.astro';
+---
+<BaseLayout
+  title="Best Crazy Time Strategy in 2026 — Low Risk + Smart Bankroll"
+  description="The best Crazy Time strategies for 2026 ranked by risk level. Flat betting, bonus hunting, and conservative approaches with bankroll rules."
+>
+  <div class="max-w-3xl mx-auto px-4 py-10">
+    <h1>Best Crazy Time Strategy in 2026</h1>
+    <p class="text-lg text-slate-300">
+      The best Crazy Time strategy depends on your bankroll size and risk tolerance. This page ranks the top approaches from safest to most aggressive, with clear bet sizing rules for each.
+    </p>
+
+    <h2>Strategy Comparison Table</h2>
+    <div class="overflow-x-auto mb-8">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-slate-400 border-b border-slate-700 text-left">
+            <th class="pb-2 pr-4">Strategy</th>
+            <th class="pb-2 pr-4">Bet Size</th>
+            <th class="pb-2 pr-4">Stop-Loss</th>
+            <th class="pb-2">Risk</th>
+          </tr>
+        </thead>
+        <tbody class="text-slate-300">
+          {[
+            { name: 'Conservative', bet: '1%', stop: '30%', risk: 'Low', color: '#22c55e' },
+            { name: 'Balanced',     bet: '2%', stop: '40%', risk: 'Medium', color: '#f59e0b' },
+            { name: 'Bonus Hunt',   bet: '3%', stop: '50%', risk: 'High', color: '#ef4444' },
+            { name: 'Aggressive',   bet: '5%', stop: '50%', risk: 'Very High', color: '#dc2626' },
+          ].map(row => (
+            <tr class="border-b border-slate-700/50">
+              <td class="py-3 pr-4 font-semibold" style={`color: ${row.color}`}>{row.name}</td>
+              <td class="py-3 pr-4">{row.bet} of bankroll</td>
+              <td class="py-3 pr-4">{row.stop} loss</td>
+              <td class="py-3" style={`color: ${row.color}`}>{row.risk}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      Use the <a href="/bankroll-calculator">bankroll calculator</a> to convert these percentages into exact bet amounts for your session.
+    </p>
+
+    <h2>Best Strategy for Most Players: Balanced Approach</h2>
+    <p>
+      Bet 2% of your session bankroll per round. Split this across the 1 segment (60%) and one bonus segment (40%). This gives you enough main wheel coverage to stay in the game while keeping a bonus round stake alive every spin. Read the complete <a href="/crazy-time-strategy">Crazy Time strategy guide</a> for the full breakdown.
+    </p>
+
+    <h2>Best Strategy for Bonus Chasers</h2>
+    <p>
+      Allocate 50–70% of your bet to a single bonus segment (Crazy Time or Pachinko). Accept frequent small losses on the main wheel — you are hunting the bonus multipliers. This only makes sense with a dedicated bonus hunt budget and a hard stop-loss at 50%.
+    </p>
+
+    <h2>Mistakes to Avoid</h2>
+    <ul>
+      <li>Never increase bet size after a losing streak</li>
+      <li>Never play without a set stop-loss</li>
+      <li>Never bet all 8 segments — the combined house edge guarantees a net loss per round</li>
+    </ul>
+
+    <h2>Where to Play with These Strategies</h2>
+    <p>
+      Stake is the recommended platform. Live Crazy Time tables run 24/7, crypto deposits and withdrawals are instant, and the game is accessible worldwide.
+    </p>
+    <StakeCTA variant="card" text="Play Crazy Time on Stake — Instant Sign Up" />
+
+    <div class="space-y-4 mt-8">
+      <h2>FAQ</h2>
+      {[
+        { q: 'What is the single best Crazy Time strategy?', a: 'The balanced strategy (2% bet, split across 1 segment + 1 bonus) gives the best mix of session length and bonus exposure for most players.' },
+        { q: 'Do any Crazy Time strategies actually work?', a: 'Strategies control risk and session length — they cannot overcome the house edge. The goal is to make the most of the sessions you play.' },
+        { q: 'What is flat betting in Crazy Time?', a: 'Flat betting means using the same bet size every round regardless of wins or losses. It is the most sustainable approach.' },
+        { q: 'How do I pick the best strategy for my bankroll?', a: 'Use our bankroll calculator — enter your session bankroll and select a risk preset to get your exact bet size.' },
+        { q: 'Is the Crazy Time bonus worth chasing?', a: 'Yes if you have a bonus hunt budget. The Crazy Time bonus has the highest multiplier potential. Allocate a fixed stake and stop when it runs out.' },
+      ].map(faq => (
+        <div class="bg-slate-800 rounded-xl p-4">
+          <p class="font-semibold text-slate-100 mb-1 m-0">{faq.q}</p>
+          <p class="text-slate-400 text-sm m-0">{faq.a}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-10 pt-8 border-t border-slate-700 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+      <a href="/crazy-time-strategy" class="text-amber-400 hover:text-amber-300">→ Crazy Time strategy guide</a>
+      <a href="/crazy-time-rtp" class="text-amber-400 hover:text-amber-300">→ RTP breakdown</a>
+      <a href="/crazy-time-bankroll-strategy" class="text-amber-400 hover:text-amber-300">→ Bankroll management</a>
+      <a href="/where-to-play-crazy-time" class="text-amber-400 hover:text-amber-300">→ Where to play Crazy Time</a>
+    </div>
+
+    <StakeCTA variant="sticky" />
+  </div>
+</BaseLayout>

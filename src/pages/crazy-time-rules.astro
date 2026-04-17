@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StakeCTA from '../components/StakeCTA.astro';
+---
+<BaseLayout
+  title="Crazy Time Rules Explained — How to Play Step by Step 2026"
+  description="Crazy Time rules explained clearly. Betting rules, wheel segments, bonus round mechanics, and what happens each round."
+>
+  <div class="max-w-3xl mx-auto px-4 py-10">
+    <h1>Crazy Time Rules Explained 2026</h1>
+    <p class="text-lg text-slate-300">
+      Crazy Time is a live game show wheel from Evolution Gaming. These are the complete rules — from how to place a bet to how each bonus round resolves.
+    </p>
+
+    <h2>The Wheel</h2>
+    <p>The Crazy Time wheel has 54 segments in 8 categories:</p>
+    <ul>
+      <li>1 — appears 24 times, pays 1:1</li>
+      <li>2 — appears 13 times, pays 2:1</li>
+      <li>5 — appears 7 times, pays 5:1</li>
+      <li>10 — appears 4 times, pays 10:1</li>
+      <li>Coin Flip — appears 2 times, triggers bonus</li>
+      <li>Cash Hunt — appears 2 times, triggers bonus</li>
+      <li>Pachinko — appears 2 times, triggers bonus</li>
+      <li>Crazy Time — appears 1 time, triggers bonus</li>
+    </ul>
+
+    <h2>Betting Rules</h2>
+    <ul>
+      <li>Players bet before each spin during the betting window (usually 15–20 seconds)</li>
+      <li>You can bet on multiple segments in the same round</li>
+      <li>Minimum and maximum bets vary by casino</li>
+      <li>Only bets on the winning segment are paid — all other bets are lost</li>
+      <li>Late bets (after the countdown ends) are not accepted</li>
+    </ul>
+
+    <h2>Top Slot</h2>
+    <p>
+      Before each spin, a "top slot" spins separately and can show a segment + multiplier (e.g., "5 — ×7"). If the main wheel lands on that segment, the payout is multiplied by the top slot value. The top slot multiplier applies to that segment only for that round.
+    </p>
+
+    <h2>Bonus Round Rules</h2>
+    <p>Only players who bet on the triggering bonus segment participate in the bonus round and receive its payout. Players who did not bet on the bonus segment receive nothing from the bonus round.</p>
+    <ul>
+      <li><strong>Coin Flip:</strong> Coin flips — winning side's multiplier pays your bonus stake</li>
+      <li><strong>Cash Hunt:</strong> Cannon fires — your selected symbol's multiplier pays</li>
+      <li><strong>Pachinko:</strong> Ball drops — landing multiplier pays (doubled if top slot shows double)</li>
+      <li><strong>Crazy Time:</strong> Giant wheel spins — chosen flapper's sector multiplier pays</li>
+    </ul>
+
+    <StakeCTA variant="card" text="Play Crazy Time on Stake →" />
+
+    <div class="space-y-4 mt-2">
+      <h2>FAQ</h2>
+      {[
+        { q: 'Can I bet on more than one segment per round?', a: 'Yes. You can bet on as many segments as you want in each round, with any amounts.' },
+        { q: 'What happens if I miss the betting window?', a: 'Your bet is not placed. You watch the round but do not win or lose anything.' },
+        { q: 'Does the top slot multiplier apply to bonus rounds?', a: 'No. The top slot multiplier only applies to main wheel number segments. Bonus rounds have their own multiplier mechanics.' },
+        { q: 'Do I have to choose a side in Cash Hunt?', a: 'Yes. After the cannon fires and reveals a grid of symbols, you select one. Your selected symbol reveals your multiplier.' },
+        { q: 'What is the maximum possible payout in Crazy Time?', a: 'Theoretically over ×20,000 on the Crazy Time bonus, and ×10,000 on Pachinko. Real-world maximums depend on the casino\'s payout cap.' },
+      ].map(faq => (
+        <div class="bg-slate-800 rounded-xl p-4">
+          <p class="font-semibold text-slate-100 mb-1 m-0">{faq.q}</p>
+          <p class="text-slate-400 text-sm m-0">{faq.a}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-10 pt-8 border-t border-slate-700 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+      <a href="/crazy-time-strategy" class="text-amber-400 hover:text-amber-300">→ Crazy Time strategy guide</a>
+      <a href="/crazy-time-rtp" class="text-amber-400 hover:text-amber-300">→ RTP breakdown</a>
+      <a href="/crazy-time-bankroll-strategy" class="text-amber-400 hover:text-amber-300">→ Bankroll management</a>
+      <a href="/where-to-play-crazy-time" class="text-amber-400 hover:text-amber-300">→ Where to play Crazy Time</a>
+    </div>
+    <StakeCTA variant="sticky" />
+  </div>
+</BaseLayout>

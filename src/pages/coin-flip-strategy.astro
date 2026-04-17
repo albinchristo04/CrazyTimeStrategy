@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StakeCTA from '../components/StakeCTA.astro';
+---
+<BaseLayout
+  title="Coin Flip Strategy — Crazy Time Bonus Guide 2026"
+  description="Best Coin Flip strategy for Crazy Time. How the bonus works, how to size your Coin Flip bet, and when to target it."
+>
+  <div class="max-w-3xl mx-auto px-4 py-10">
+    <h1>Coin Flip Strategy for Crazy Time 2026</h1>
+    <p class="text-lg text-slate-300">
+      Coin Flip is one of four bonus rounds in Crazy Time. It appears twice on the 54-segment wheel, making it the most frequently triggered bonus alongside Cash Hunt and Pachinko. This guide covers how it works and how to bet it.
+    </p>
+
+    <h2>How Coin Flip Works</h2>
+    <p>
+      When the main wheel lands on Coin Flip, a large physical coin is flipped. One side is red, one is blue. Before the flip, each side is assigned a random multiplier by an RNG. Whichever side lands face-up pays that multiplier on your Coin Flip stake.
+    </p>
+    <p>
+      If the top slot showed a "double" before the main spin, all Coin Flip multipliers are doubled before the flip. This can push payouts significantly higher.
+    </p>
+
+    <h2>Coin Flip Bet Sizing</h2>
+    <p>
+      Coin Flip appears ~3.7% of the time per spin. If you bet on it every round with a small stake, you participate roughly every 27 rounds on average. A common approach:
+    </p>
+    <ul>
+      <li>Allocate 20–30% of your total round bet to Coin Flip</li>
+      <li>Keep the majority on the 1 or 2 segment for session longevity</li>
+      <li>Treat the Coin Flip stake as a bonus fund — size it independently</li>
+    </ul>
+
+    <h2>When to Target Coin Flip</h2>
+    <p>
+      Coin Flip is best for players who want bonus exposure without fully committing to a bonus hunt. Its hit rate is higher than Pachinko and Crazy Time, and its payouts, while lower than those two, are more consistent.
+    </p>
+    <p>
+      For a full comparison of bonus rounds, read the <a href="/crazy-time-bonus-rounds">bonus rounds guide</a>. For the broader session strategy, see the <a href="/crazy-time-strategy">Crazy Time strategy guide</a>.
+    </p>
+
+    <StakeCTA variant="card" text="Play Coin Flip on Stake →" />
+
+    <div class="space-y-4 mt-2">
+      <h2>FAQ</h2>
+      {[
+        { q: 'How often does Coin Flip hit?', a: 'Coin Flip appears on 2 of 54 segments — approximately 3.7% per spin, or about once every 27 rounds.' },
+        { q: 'What is the maximum Coin Flip payout?', a: 'With multipliers and top slot doubles, Coin Flip can pay over ×1000 on your Coin Flip stake.' },
+        { q: 'Should I bet Coin Flip every round?', a: 'Yes, with a small stake. Keeping a bonus bet active every round means you capture the payout when it hits.' },
+        { q: 'Is Coin Flip or Pachinko better to target?', a: 'Coin Flip hits more often but pays less. Pachinko pays more but is harder to hit. For consistency, Coin Flip is easier. For maximum upside, Pachinko.' },
+        { q: 'Does the top slot affect Coin Flip payouts?', a: 'Yes. If the top slot shows "double + Coin Flip", all multipliers in the Coin Flip bonus are doubled before the coin is flipped.' },
+      ].map(faq => (
+        <div class="bg-slate-800 rounded-xl p-4">
+          <p class="font-semibold text-slate-100 mb-1 m-0">{faq.q}</p>
+          <p class="text-slate-400 text-sm m-0">{faq.a}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-10 pt-8 border-t border-slate-700 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+      <a href="/crazy-time-strategy" class="text-amber-400 hover:text-amber-300">→ Crazy Time strategy guide</a>
+      <a href="/crazy-time-rtp" class="text-amber-400 hover:text-amber-300">→ RTP breakdown</a>
+      <a href="/crazy-time-bankroll-strategy" class="text-amber-400 hover:text-amber-300">→ Bankroll management</a>
+      <a href="/where-to-play-crazy-time" class="text-amber-400 hover:text-amber-300">→ Where to play Crazy Time</a>
+    </div>
+    <StakeCTA variant="sticky" />
+  </div>
+</BaseLayout>

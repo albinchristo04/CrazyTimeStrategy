@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StakeCTA from '../components/StakeCTA.astro';
+---
+<BaseLayout
+  title="How to Win at Crazy Time — Realistic Strategies for 2026"
+  description="Realistic guide to winning at Crazy Time. What actually works, what does not, and how to maximize your sessions."
+>
+  <div class="max-w-3xl mx-auto px-4 py-10">
+    <h1>How to Win at Crazy Time in 2026</h1>
+    <p class="text-lg text-slate-300">
+      Crazy Time uses a certified RNG wheel — there is no guaranteed winning method. But smart players consistently do better by managing bankroll, choosing the right bet structure, and playing within a disciplined session plan.
+    </p>
+
+    <h2>What Actually Works</h2>
+    <ul>
+      <li><strong>Bankroll discipline:</strong> Players who follow hard stop-losses preserve capital for future sessions. This is the single biggest factor separating losing players from breakeven players.</li>
+      <li><strong>Bonus round exposure:</strong> The only way to win big in Crazy Time is through bonus rounds. Every session plan should include a bonus stake active every round.</li>
+      <li><strong>Flat betting:</strong> Consistent bet sizes prevent emotional escalation and make results predictable across sessions.</li>
+      <li><strong>Session limits:</strong> Walking away at a profit target locks in wins instead of giving them back.</li>
+    </ul>
+
+    <h2>What Does Not Work</h2>
+    <ul>
+      <li><strong>Martingale and progressive systems:</strong> Doubling bets after losses accelerates bankroll drain. Crazy Time variance is too high for progressive systems to be sustainable.</li>
+      <li><strong>Hot/cold prediction:</strong> Each spin is independent. Past results do not affect future spins. Our <a href="/crazy-time-predictor">live tracker</a> shows frequency data — not spin prediction.</li>
+      <li><strong>Betting all segments:</strong> The combined house edge across all segments guarantees a net loss per round if you cover everything.</li>
+    </ul>
+
+    <h2>The Realistic Winning Formula</h2>
+    <ol>
+      <li>Set a session bankroll (50–100× your bet size)</li>
+      <li>Choose a bet size of 1–2% of that bankroll</li>
+      <li>Always have a bonus stake active</li>
+      <li>Stop at your stop-loss — no exceptions</li>
+      <li>Stop at your take-profit — no exceptions</li>
+    </ol>
+    <p>
+      This does not guarantee profit. It maximizes your chances of hitting a bonus round with bankroll intact and locking in the result. Read the full <a href="/crazy-time-strategy">Crazy Time strategy guide</a> and the <a href="/crazy-time-bankroll-strategy">bankroll management guide</a> for the detailed breakdown.
+    </p>
+
+    <StakeCTA variant="card" text="Play Crazy Time on Stake →" />
+
+    <div class="space-y-4 mt-2">
+      <h2>FAQ</h2>
+      {[
+        { q: 'Can you consistently win at Crazy Time?', a: 'Not consistently — the house edge means long-term results favor the casino. But disciplined players can win in individual sessions more often than undisciplined ones.' },
+        { q: 'What is the best bet to win at Crazy Time?', a: 'The 2 and 10 segments have the best RTP. For bonus-focused play, Pachinko and Crazy Time bonus have the highest upside.' },
+        { q: 'Does betting more increase my chances of winning?', a: 'No. The probability per segment is fixed. Betting more per round increases risk, not winning odds.' },
+        { q: 'Is there a lucky time to play Crazy Time?', a: 'No. The wheel spins are random and independent of time of day, session length, or previous results.' },
+        { q: 'How do professional players approach Crazy Time?', a: 'With fixed session budgets, flat bets, hard stop-losses, and no emotional decision-making. The game is entertainment — they treat it like a capped cost.' },
+      ].map(faq => (
+        <div class="bg-slate-800 rounded-xl p-4">
+          <p class="font-semibold text-slate-100 mb-1 m-0">{faq.q}</p>
+          <p class="text-slate-400 text-sm m-0">{faq.a}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-10 pt-8 border-t border-slate-700 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+      <a href="/crazy-time-strategy" class="text-amber-400 hover:text-amber-300">→ Crazy Time strategy guide</a>
+      <a href="/crazy-time-rtp" class="text-amber-400 hover:text-amber-300">→ RTP breakdown</a>
+      <a href="/crazy-time-bankroll-strategy" class="text-amber-400 hover:text-amber-300">→ Bankroll management</a>
+      <a href="/where-to-play-crazy-time" class="text-amber-400 hover:text-amber-300">→ Where to play Crazy Time</a>
+    </div>
+    <StakeCTA variant="sticky" />
+  </div>
+</BaseLayout>

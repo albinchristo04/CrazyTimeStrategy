@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StakeCTA from '../components/StakeCTA.astro';
+import { BASE_RATES, SEGMENT_LABELS } from '../lib/constants';
+import type { Segment } from '../lib/types';
+---
+<BaseLayout
+  title="Crazy Time Odds Explained — Probability Per Segment 2026"
+  description="Exact Crazy Time odds per segment. Probability of each wheel result, bonus round chances, and what the numbers mean for your bets."
+>
+  <div class="max-w-3xl mx-auto px-4 py-10">
+    <h1>Crazy Time Odds Explained for 2026</h1>
+    <p class="text-lg text-slate-300">
+      Crazy Time's odds are determined by the number of segments on the 54-slot wheel. This page breaks down the exact probability of each result, how often bonus rounds hit, and what these odds mean in a real session.
+    </p>
+
+    <h2>Probability Per Segment</h2>
+    <div class="overflow-x-auto mb-8">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-slate-400 border-b border-slate-700 text-left">
+            <th class="pb-2 pr-4">Segment</th>
+            <th class="pb-2 pr-4">Slots on Wheel</th>
+            <th class="pb-2 pr-4">Probability</th>
+            <th class="pb-2">Expected Gap (rounds)</th>
+          </tr>
+        </thead>
+        <tbody class="text-slate-300">
+          {[
+            { seg: '1',         slots: 24 },
+            { seg: '2',         slots: 13 },
+            { seg: '5',         slots: 7  },
+            { seg: '10',        slots: 4  },
+            { seg: 'CoinFlip',  slots: 2  },
+            { seg: 'CashHunt',  slots: 2  },
+            { seg: 'Pachinko',  slots: 2  },
+            { seg: 'CrazyTime', slots: 1  },
+          ].map(row => {
+            const prob = BASE_RATES[row.seg as Segment];
+            return (
+              <tr class="border-b border-slate-700/50">
+                <td class="py-3 pr-4 font-semibold text-slate-100">{SEGMENT_LABELS[row.seg as Segment]}</td>
+                <td class="py-3 pr-4 text-slate-400">{row.slots} / 54</td>
+                <td class="py-3 pr-4 font-semibold text-amber-400">{(prob * 100).toFixed(1)}%</td>
+                <td class="py-3 text-slate-400">~{Math.round(1 / prob)} rounds</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+
+    <h2>What These Odds Mean in a Session</h2>
+    <p>
+      In 100 rounds of Crazy Time, you can expect (on average):
+    </p>
+    <ul>
+      <li>44 results on the 1 segment</li>
+      <li>22 results on the 2 segment</li>
+      <li>4–8 bonus round triggers total across all four bonus types</li>
+      <li>1–2 Crazy Time bonus triggers (highest variance)</li>
+    </ul>
+    <p>
+      These are averages — actual results can vary significantly. Use our <a href="/crazy-time-predictor">live Crazy Time tracker</a> to see the actual frequency distribution from real recent data.
+    </p>
+
+    <h2>Odds vs Strategy</h2>
+    <p>
+      The odds are fixed by the wheel. Your <a href="/crazy-time-strategy">strategy</a> does not change the odds — it determines how you allocate your stake across those fixed probabilities. Understanding odds helps you make informed bets and set realistic session expectations.
+    </p>
+
+    <StakeCTA variant="card" text="Play Crazy Time on Stake →" />
+
+    <div class="space-y-4 mt-2">
+      <h2>FAQ</h2>
+      {[
+        { q: 'What are the odds of hitting the Crazy Time bonus?', a: 'The Crazy Time bonus segment appears once on a 54-slot wheel — approximately a 1.85% chance per spin, or about once every 54 rounds on average.' },
+        { q: 'How often does the 1 segment hit?', a: 'With 24 of 54 slots, the 1 segment hits about 44.4% of the time — roughly every other spin on average.' },
+        { q: 'Are the odds different at different casinos?', a: 'The odds are set by the wheel design, which is standardized by Evolution Gaming. The same wheel is used across all licensed operators.' },
+        { q: 'Can I use the odds to predict the next result?', a: 'No. Each spin is independent. Odds describe long-run averages, not individual spin outcomes.' },
+        { q: 'What are the combined odds of hitting any bonus round?', a: 'All four bonus segments combined cover 7 of 54 slots — about 13% per spin, or roughly once every 7–8 rounds.' },
+      ].map(faq => (
+        <div class="bg-slate-800 rounded-xl p-4">
+          <p class="font-semibold text-slate-100 mb-1 m-0">{faq.q}</p>
+          <p class="text-slate-400 text-sm m-0">{faq.a}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-10 pt-8 border-t border-slate-700 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+      <a href="/crazy-time-strategy" class="text-amber-400 hover:text-amber-300">→ Crazy Time strategy guide</a>
+      <a href="/crazy-time-rtp" class="text-amber-400 hover:text-amber-300">→ RTP breakdown</a>
+      <a href="/crazy-time-bankroll-strategy" class="text-amber-400 hover:text-amber-300">→ Bankroll management</a>
+      <a href="/where-to-play-crazy-time" class="text-amber-400 hover:text-amber-300">→ Where to play Crazy Time</a>
+    </div>
+    <StakeCTA variant="sticky" />
+  </div>
+</BaseLayout>

@@ -1,0 +1,61 @@
+---
+export const prerender = true;
+
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import StakeCTA from '../../components/StakeCTA.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const siloLabels: Record<string, string> = {
+  strategy:        'Strategy',
+  bonuses:         'Bonuses',
+  rtp:             'Math & RTP',
+  beginner:        'Beginners',
+  'buying-intent': 'Casino Picks',
+  predictor:       'Predictor & Stats',
+};
+---
+<BaseLayout title={post.data.title} description={post.data.description}>
+  <article class="max-w-3xl mx-auto px-4 py-10">
+    <div class="mb-6">
+      <span class="text-xs text-amber-500 font-semibold uppercase tracking-wider">
+        {siloLabels[post.data.silo] ?? post.data.silo}
+      </span>
+      <h1 class="mt-2">{post.data.title}</h1>
+      <p class="text-slate-500 text-sm">
+        Published {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+      </p>
+    </div>
+
+    <div class="prose prose-invert prose-slate max-w-none
+      prose-headings:text-slate-100
+      prose-p:text-slate-300
+      prose-a:text-amber-400 prose-a:no-underline hover:prose-a:text-amber-300
+      prose-strong:text-slate-100
+      prose-ul:text-slate-300
+      prose-ol:text-slate-300">
+      <Content />
+    </div>
+
+    <StakeCTA variant="card" />
+
+    <div class="mt-10 pt-8 border-t border-slate-700 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+      <a href="/crazy-time-strategy" class="text-amber-400 hover:text-amber-300">→ Crazy Time strategy guide</a>
+      <a href="/crazy-time-rtp" class="text-amber-400 hover:text-amber-300">→ RTP breakdown</a>
+      <a href="/crazy-time-bankroll-strategy" class="text-amber-400 hover:text-amber-300">→ Bankroll management</a>
+      <a href="/where-to-play-crazy-time" class="text-amber-400 hover:text-amber-300">→ Where to play Crazy Time</a>
+    </div>
+
+    <StakeCTA variant="sticky" />
+  </article>
+</BaseLayout>

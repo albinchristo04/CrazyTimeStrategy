@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StakeCTA from '../components/StakeCTA.astro';
+---
+<BaseLayout
+  title="Crazy Time Bonus Rounds Explained — All 4 Bonuses 2026"
+  description="All four Crazy Time bonus rounds explained. Coin Flip, Cash Hunt, Pachinko, and Crazy Time bonus — how they work, max payouts, and strategy tips."
+>
+  <div class="max-w-3xl mx-auto px-4 py-10">
+    <h1>Crazy Time Bonus Rounds Explained 2026</h1>
+    <p class="text-lg text-slate-300">
+      Crazy Time has four bonus rounds: Coin Flip, Cash Hunt, Pachinko, and the Crazy Time bonus. Each works differently and has a different payout ceiling. This guide explains all four.
+    </p>
+
+    <h2>1. Coin Flip</h2>
+    <p>
+      A large coin with a red side and a blue side is flipped. Before the flip, each side is assigned a random multiplier. Whichever side lands face-up wins. If the top slot shows a multiplier of ×5, the winning side pays 5× your Coin Flip stake.
+    </p>
+    <ul>
+      <li>Appears: 2 times on the wheel</li>
+      <li>Max payout: ×1000+</li>
+      <li>RTP: ~95.7%</li>
+    </ul>
+
+    <h2>2. Cash Hunt</h2>
+    <p>
+      A wall of 108 symbols is displayed. A cannon fires and randomly selects a symbol on the wall. Each symbol hides a multiplier. Your selected symbol's multiplier is your payout.
+    </p>
+    <ul>
+      <li>Appears: 2 times on the wheel</li>
+      <li>Max payout: ×100+</li>
+      <li>RTP: ~95.5%</li>
+    </ul>
+
+    <h2>3. Pachinko</h2>
+    <p>
+      A ball drops from the top of a physical peg board and bounces down to land on a multiplier at the bottom. The top slot can increase the base multipliers before the drop. Maximum multiplier is ×10,000.
+    </p>
+    <ul>
+      <li>Appears: 2 times on the wheel</li>
+      <li>Max payout: ×10,000</li>
+      <li>RTP: ~94.3%</li>
+    </ul>
+
+    <h2>4. Crazy Time Bonus</h2>
+    <p>
+      The flagship bonus round. Players choose one of three flappers on a giant digital wheel. The wheel spins and can land on multipliers up to ×20,000. A "double" segment doubles all multipliers on the wheel. This is the most volatile and highest-upside bonus round.
+    </p>
+    <ul>
+      <li>Appears: 1 time on the wheel</li>
+      <li>Max payout: ×20,000+</li>
+      <li>RTP: ~94.4%</li>
+    </ul>
+
+    <StakeCTA variant="card" text="Play Crazy Time Bonus Rounds on Stake →" />
+
+    <div class="space-y-4 mt-2">
+      <h2>FAQ</h2>
+      {[
+        { q: 'Which Crazy Time bonus pays the most?', a: 'The Crazy Time bonus has the highest max payout at ×20,000+. Pachinko is second at ×10,000.' },
+        { q: 'How often do bonus rounds hit?', a: 'Each bonus segment appears 1–2 times per 54 segments. Expect roughly 4–8 bonus rounds per 100 spins.' },
+        { q: 'Can a bonus round be triggered back-to-back?', a: 'Yes. There is no cooldown between bonus rounds.' },
+        { q: 'Does the top slot always activate in bonus rounds?', a: 'No. The top slot is a multiplier applied to the bonus wheel or Pachinko board before the main result — it does not always land on a double.' },
+        { q: 'What is the best bonus round for a beginner?', a: 'Coin Flip is the simplest to understand. Cash Hunt and Pachinko offer a better gameplay experience. Crazy Time is the most exciting but the rarest.' },
+      ].map(faq => (
+        <div class="bg-slate-800 rounded-xl p-4">
+          <p class="font-semibold text-slate-100 mb-1 m-0">{faq.q}</p>
+          <p class="text-slate-400 text-sm m-0">{faq.a}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-10 pt-8 border-t border-slate-700 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+      <a href="/crazy-time-strategy" class="text-amber-400 hover:text-amber-300">→ Crazy Time strategy guide</a>
+      <a href="/crazy-time-rtp" class="text-amber-400 hover:text-amber-300">→ RTP breakdown</a>
+      <a href="/crazy-time-bankroll-strategy" class="text-amber-400 hover:text-amber-300">→ Bankroll management</a>
+      <a href="/where-to-play-crazy-time" class="text-amber-400 hover:text-amber-300">→ Where to play Crazy Time</a>
+    </div>
+
+    <StakeCTA variant="sticky" />
+  </div>
+</BaseLayout>

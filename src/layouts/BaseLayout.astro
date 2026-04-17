@@ -1,0 +1,49 @@
+---
+import Nav from '../components/Nav.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+}
+
+const {
+  title,
+  description = 'Crazy Time strategy guides, bankroll tools, RTP data, and the only live RNG pattern tracker.',
+  canonical,
+} = Astro.props;
+
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title} | CrazyTimeStrategy.top</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalUrl} />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <meta property="og:title" content={`${title} | CrazyTimeStrategy.top`} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+</head>
+<body class="min-h-screen flex flex-col">
+  <Nav />
+  <main class="flex-1">
+    <slot />
+  </main>
+  <footer class="border-t border-slate-700 py-8 px-4 text-center text-sm text-slate-500">
+    <p class="mb-2">CrazyTimeStrategy.top — Educational content only. Play responsibly. 18+</p>
+    <p>
+      We earn commission from casino referrals.
+      <a href="/affiliate-disclosure" class="underline ml-1">Affiliate Disclosure</a>
+      <span class="mx-2">·</span>
+      <a href="/crazy-time-strategy" class="underline">Strategy Guide</a>
+      <span class="mx-2">·</span>
+      <a href="/crazy-time-predictor" class="underline">Live Predictor</a>
+    </p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StakeCTA from '../components/StakeCTA.astro';
+---
+<BaseLayout
+  title="Crazy Time Strategy — Best Approaches for 2026"
+  description="The complete Crazy Time strategy guide. Low risk, balanced, and aggressive approaches explained with bankroll rules and bonus tips."
+>
+  <div class="max-w-3xl mx-auto px-4 py-10">
+    <h1>Crazy Time Strategy Guide 2026</h1>
+    <p class="text-lg text-slate-300">
+      Crazy Time is a live casino wheel game by Evolution Gaming. There is no system that beats the house edge — but a smart strategy controls your session length, manages risk, and helps you get the most from bonus rounds. This guide covers the proven approaches used by experienced players.
+    </p>
+
+    <h2>How Crazy Time Works</h2>
+    <p>
+      A large wheel spins each round with 54 segments: 1 (×24), 2 (×13), 5 (×7), 10 (×4), Coin Flip (×2), Cash Hunt (×2), Pachinko (×2), and Crazy Time (×1). You bet on one or more segments before the spin. If it lands on your choice, you win. Bonus rounds offer multiplied prizes.
+    </p>
+    <p>
+      Understanding the <a href="/crazy-time-rtp">RTP breakdown</a> is the foundation of any smart strategy. Every segment has a different house edge — knowing this tells you where your money is actually going.
+    </p>
+
+    <h2>Core Strategy Approaches</h2>
+    <p>All Crazy Time strategies are bankroll management strategies. The game itself is random. Your job is to survive the variance long enough to hit bonus rounds.</p>
+
+    <h3>1. Conservative Strategy (Recommended for Beginners)</h3>
+    <p>
+      Bet 70–80% of your stake on the 1 segment and 20–30% on the 2. This keeps your bankroll alive longest. Expect slow, gradual losses between bonus rounds. The upside: bonus rounds hit with a full bankroll still intact.
+    </p>
+    <ul>
+      <li>Bet size: 1% of session bankroll per round</li>
+      <li>Stop-loss: 30% of session bankroll</li>
+      <li>Bonus coverage: small side bet on Coin Flip or Pachinko</li>
+    </ul>
+
+    <h3>2. Balanced Strategy (Most Popular)</h3>
+    <p>
+      Split bets across 1, 2, and one bonus segment. This gives reasonable main wheel coverage while keeping a bonus chance active every round. Use our <a href="/bankroll-calculator">bankroll calculator</a> to dial in your bet sizes.
+    </p>
+    <ul>
+      <li>Bet size: 2% of session bankroll per round</li>
+      <li>Stop-loss: 40% of session bankroll</li>
+      <li>Bonus coverage: 1 bonus segment per round</li>
+    </ul>
+
+    <h3>3. Aggressive / Bonus Hunt Strategy</h3>
+    <p>
+      Flat bet on one or two bonus segments each round and accept the main wheel losses. This burns bankroll faster but maximizes bonus round frequency. Only use with a dedicated bonus hunt budget.
+    </p>
+    <ul>
+      <li>Bet size: 3–5% of session bankroll per round</li>
+      <li>Stop-loss: 50% of session bankroll</li>
+      <li>Focus: Crazy Time or Pachinko only</li>
+    </ul>
+
+    <h2>Common Mistakes to Avoid</h2>
+    <ul>
+      <li>Chasing losses — increasing bets after a losing run always accelerates the bust</li>
+      <li>Ignoring stop-loss — set a hard limit before the session and respect it</li>
+      <li>Betting all segments — this creates mathematically guaranteed losses per round</li>
+      <li>Playing without a <a href="/session-planner">session plan</a></li>
+    </ul>
+
+    <StakeCTA variant="card" text="Try Crazy Time on Stake →" />
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="space-y-4">
+      {[
+        { q: 'Is there a strategy that guarantees winning at Crazy Time?', a: 'No. Crazy Time uses a certified RNG wheel. Every spin is independent. Strategy controls your risk, not the outcome.' },
+        { q: 'What is the best Crazy Time strategy for beginners?', a: 'The conservative approach — 1% bet size, heavy allocation to the 1 segment, clear stop-loss — is the best starting point.' },
+        { q: 'How much bankroll do I need for a Crazy Time session?', a: 'At least 50 bets worth of bankroll. If your bet is $2, bring $100 minimum.' },
+        { q: 'Should I use a betting system like Martingale?', a: 'No. Progressive betting systems do not overcome the house edge and accelerate bankroll loss at high risk levels.' },
+        { q: 'Which bonus round pays the most?', a: 'The Crazy Time bonus has the highest max multiplier potential. Pachinko and Cash Hunt are also high-value. Read our bonus rounds guide for a full breakdown.' },
+      ].map(faq => (
+        <div class="bg-slate-800 rounded-xl p-4">
+          <p class="font-semibold text-slate-100 mb-1 m-0">{faq.q}</p>
+          <p class="text-slate-400 text-sm m-0">{faq.a}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-10 pt-8 border-t border-slate-700 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+      <a href="/crazy-time-rtp" class="text-amber-400 hover:text-amber-300">→ RTP breakdown</a>
+      <a href="/crazy-time-bankroll-strategy" class="text-amber-400 hover:text-amber-300">→ Bankroll management</a>
+      <a href="/where-to-play-crazy-time" class="text-amber-400 hover:text-amber-300">→ Where to play Crazy Time</a>
+      <a href="/crazy-time-predictor" class="text-amber-400 hover:text-amber-300">→ Live Crazy Time tracker</a>
+    </div>
+
+    <StakeCTA variant="sticky" />
+  </div>
+</BaseLayout>

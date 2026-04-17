@@ -1,0 +1,68 @@
+---
+title: "How Our Crazy Time Predictor Works — Methodology Explained"
+description: "How the CrazyTimeStrategy.top live predictor works. The data source, the 4-signal algorithm, and what the scores mean."
+pubDate: 2026-04-17
+silo: predictor
+keyword: crazy time predictor
+---
+
+Our [live Crazy Time tracker](/crazy-time-predictor) fetches real game results and runs a 4-signal pattern analysis on each segment. This page explains the methodology behind the scores.
+
+## Data Source
+
+The tracker fetches the last 100 Crazy Time results from a verified live game data API. The request is made through a server-side proxy — the API token is never exposed to your browser. Data is loaded on-demand when you click "Refresh Results". There is no auto-polling.
+
+## The 4 Signals
+
+Each segment receives a score from 0 to 100 based on four signals:
+
+**Signal 1 — Base Rate (40%)**
+The theoretical wheel probability from Evolution Gaming's published segment frequencies. This anchors the score in mathematical reality.
+
+**Signal 2 — Gap Boost (30%)**
+How many rounds since the segment last hit vs its average expected gap. An overdue segment scores higher. A segment that hit recently scores lower on this signal.
+
+**Signal 3 — Cold Correction (20%)**
+Compares the segment's actual frequency in the loaded data vs its expected frequency. A segment running below expectation gets a boost.
+
+**Signal 4 — Recent Dampening (10%, negative)**
+Segments that have appeared frequently in the last 50 rounds receive a slight penalty. This dampens momentum effects and balances the score.
+
+The four signals combine into a single 0–100 score per segment. Segments are ranked by score in the prediction grid.
+
+## What the Score Does NOT Mean
+
+A score of 80/100 does not mean an 80% chance of hitting on the next spin. Each spin is independent — the wheel has no memory. The score is a heuristic index that summarises pattern data for educational purposes.
+
+Use the score as one input into your [Crazy Time strategy](/crazy-time-strategy), not as a prediction guarantee. Read the full [RTP breakdown](/crazy-time-rtp) to understand the baseline probabilities.
+
+## Manual Entry Mode
+
+If you are watching a live table, you can enter results manually using the segment tap buttons or text input. Manual entries are merged with fetched data in append mode.
+
+[Open the live tracker →](/crazy-time-predictor)
+
+## Where to Play
+
+After reviewing the data, apply your session plan on Stake.
+
+[Play Crazy Time on Stake →](https://stake.ac/?c=4GH1nePX)
+
+## FAQ
+
+**Is the predictor based on real data?**
+Yes. It fetches from a verified live results API via server-side proxy.
+
+**How accurate is the prediction?**
+The algorithm identifies statistical patterns — it does not predict individual spins. Each spin is independent.
+
+**Can I trust a segment with a high score to win next?**
+No. The score reflects historical pattern data, not guaranteed outcomes.
+
+**How is the [RTP breakdown](/crazy-time-rtp) different from tracker data?**
+RTP is a mathematical long-run property. Tracker data is recent short-run frequency. Both are useful context.
+
+**Why only 100 results?**
+100 results gives a meaningful short-term frequency sample without overweighting ancient history. It reflects the current table pattern.
+
+Ready to play? [Open your Stake account here](https://stake.ac/?c=4GH1nePX)
