@@ -24,8 +24,34 @@ const siloLabels: Record<string, string> = {
   'buying-intent': 'Casino Picks',
   predictor:       'Predictor & Stats',
 };
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.pubDate.toISOString(),
+  author: {
+    '@type': 'Organization',
+    name: 'CrazyTimeStrategy.top',
+    url: 'https://crazytimestrategy.top',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'CrazyTimeStrategy.top',
+    url: 'https://crazytimestrategy.top',
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': new URL(`/blog/${post.id}`, Astro.site).href,
+  },
+};
 ---
-<BaseLayout title={post.data.title} description={post.data.description}>
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  schema={articleSchema}
+>
   <article class="max-w-3xl mx-auto px-4 py-10">
     <div class="mb-6">
       <span class="text-xs text-amber-500 font-semibold uppercase tracking-wider">
