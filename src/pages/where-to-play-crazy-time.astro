@@ -1,10 +1,27 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import StakeCTA from '../components/StakeCTA.astro';
+
+const listingSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Best Casinos to Play Crazy Time Online',
+  description: 'Recommended online casinos offering live Crazy Time by Evolution Gaming.',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Stake',
+      description: 'Live Crazy Time 24/7, crypto payments, worldwide access, instant withdrawals, no KYC for most users.',
+      url: 'https://stake.ac/?c=4GH1nePX',
+    },
+  ],
+};
 ---
 <BaseLayout
-  title="Where to Play Crazy Time Online — Best Casino 2026"
-  description="Find the best casino to play Crazy Time online. Stake offers live Crazy Time 24/7 with crypto payments, worldwide access, and instant withdrawals."
+  title="Where to Play Crazy Time Online — Best Casino in 2026"
+  description="Play Crazy Time on Stake — live 24/7, crypto deposits, instant withdrawals, worldwide access. No KYC for most users. Sign up free in minutes."
+  schema={listingSchema}
 >
   <div class="max-w-3xl mx-auto px-4 py-10">
     <h1>Where to Play Crazy Time Online in 2026</h1>
@@ -46,6 +63,18 @@ import StakeCTA from '../components/StakeCTA.astro';
       </div>
     </div>
 
+    <h2>What to Look for in a Crazy Time Casino</h2>
+    <p>
+      Not every casino that hosts Crazy Time is worth playing at. Here are the factors that separate a good platform from a frustrating one:
+    </p>
+    <ul>
+      <li><strong>24/7 live tables</strong> — Evolution Gaming runs Crazy Time around the clock, but some casinos restrict access to peak hours. Pick one that gives you a table whenever you want it.</li>
+      <li><strong>Fast withdrawals</strong> — Your winnings should reach you in minutes, not days. Crypto-native platforms like Stake process withdrawals instantly.</li>
+      <li><strong>No excessive KYC friction</strong> — ID verification is standard, but some casinos use it to delay payouts. Check reviews before depositing.</li>
+      <li><strong>Table history and stats</strong> — The best platforms show recent results, segment frequencies, and multiplier history in-game. This pairs with our <a href="/crazy-time-predictor">live tracker</a> for full context.</li>
+      <li><strong>Legitimate licensing</strong> — Always verify the platform is licensed by a recognized authority (Curaçao, MGA, UKGC, etc.).</li>
+    </ul>
+
     <h2>Why Stake for Crazy Time?</h2>
     <p>
       Stake runs Evolution Gaming's live Crazy Time tables with no scheduled downtime. The platform is crypto-native — deposits and withdrawals in Bitcoin, Ethereum, Litecoin, USDT, and others clear in minutes. There is no KYC barrier for most users, and the interface is clean on both desktop and mobile.
@@ -63,6 +92,14 @@ import StakeCTA from '../components/StakeCTA.astro';
       <li>Review your <a href="/crazy-time-bankroll-strategy">bankroll management</a> plan before the first bet</li>
     </ol>
 
+    <h2>Is Crazy Time Legal to Play Online?</h2>
+    <p>
+      Crazy Time is legal to play online in most countries where online gambling is permitted. The game is provided by Evolution Gaming, a publicly traded company regulated by multiple jurisdictions. Whether you can legally play depends on your country's laws — Stake operates under a Curaçao gaming license and publishes a list of restricted countries in their terms of service.
+    </p>
+    <p>
+      If you're unsure whether online gambling is legal in your jurisdiction, check your local laws before depositing.
+    </p>
+
     <h2>Frequently Asked Questions</h2>
     <div class="space-y-4">
       {[
@@ -71,6 +108,7 @@ import StakeCTA from '../components/StakeCTA.astro';
         { q: 'Does Stake have a welcome bonus for Crazy Time?', a: 'Stake runs regular promotions. Check their promotions page after signing up for current offers.' },
         { q: 'Is Crazy Time on Stake fair?', a: 'Yes. The game is provided by Evolution Gaming and uses a certified physical wheel — not a software RNG. Results are independently audited.' },
         { q: 'What crypto does Stake accept?', a: 'Bitcoin, Ethereum, Litecoin, USDT, XRP, and several others. Full list is on the Stake cashier page.' },
+        { q: 'Is Crazy Time legal to play online?', a: 'It is legal in most countries that permit online gambling. Stake holds a Curaçao gaming license. Check your local laws before playing.' },
       ].map(faq => (
         <div class="bg-slate-800 rounded-xl p-4">
           <p class="font-semibold text-slate-100 mb-1 m-0">{faq.q}</p>

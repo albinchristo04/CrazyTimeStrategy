@@ -1,15 +1,48 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import StakeCTA from '../components/StakeCTA.astro';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Is there a strategy that guarantees winning at Crazy Time?',
+      acceptedAnswer: { '@type': 'Answer', text: 'No. Crazy Time uses a certified RNG wheel. Every spin is independent. Strategy controls your risk, not the outcome.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the best Crazy Time strategy for beginners?',
+      acceptedAnswer: { '@type': 'Answer', text: 'The conservative approach — 1% bet size, heavy allocation to the 1 segment, clear stop-loss — is the best starting point.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much bankroll do I need for a Crazy Time session?',
+      acceptedAnswer: { '@type': 'Answer', text: 'At least 50 bets worth of bankroll. If your bet is $2, bring $100 minimum.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Should I use a betting system like Martingale in Crazy Time?',
+      acceptedAnswer: { '@type': 'Answer', text: 'No. Progressive betting systems do not overcome the house edge and accelerate bankroll loss at high risk levels.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Which Crazy Time bonus round pays the most?',
+      acceptedAnswer: { '@type': 'Answer', text: 'The Crazy Time bonus has the highest max multiplier potential. Pachinko and Cash Hunt are also high-value.' },
+    },
+  ],
+};
 ---
 <BaseLayout
-  title="Crazy Time Strategy — Best Approaches for 2026"
-  description="The complete Crazy Time strategy guide. Low risk, balanced, and aggressive approaches explained with bankroll rules and bonus tips."
+  title="Crazy Time Strategy Guide — Tips, Systems & Bankroll"
+  description="Master Crazy Time with 3 proven strategies: conservative, balanced, and bonus-hunt. Includes bankroll rules, bet sizing, stop-loss tips, and systems to avoid."
+  schema={faqSchema}
 >
   <div class="max-w-3xl mx-auto px-4 py-10">
-    <h1>Crazy Time Strategy Guide 2026</h1>
+    <h1>Crazy Time Strategy: 3 Proven Approaches (+ Bankroll Rules)</h1>
     <p class="text-lg text-slate-300">
-      Crazy Time is a live casino wheel game by Evolution Gaming. There is no system that beats the house edge — but a smart strategy controls your session length, manages risk, and helps you get the most from bonus rounds. This guide covers the proven approaches used by experienced players.
+      Crazy Time is a live casino wheel game by Evolution Gaming. There is no system that beats the house edge — but a smart crazy time betting strategy controls your session length, manages risk, and helps you get the most from bonus rounds. This guide covers the proven approaches used by experienced players.
     </p>
 
     <h2>How Crazy Time Works</h2>
@@ -52,6 +85,20 @@ import StakeCTA from '../components/StakeCTA.astro';
       <li>Stop-loss: 50% of session bankroll</li>
       <li>Focus: Crazy Time or Pachinko only</li>
     </ul>
+
+    <h2>Crazy Time Betting Systems That Don't Work</h2>
+    <p>
+      Many players try progressive betting systems on Crazy Time. None of them overcome the house edge — and several accelerate losses significantly.
+    </p>
+    <ul>
+      <li><strong>Martingale</strong> — doubling after each loss. Works until it doesn't: a losing streak of 7–8 rounds hits a table limit or busts the bankroll. The math doesn't save you.</li>
+      <li><strong>D'Alembert</strong> — increasing by 1 unit after each loss. Slower to bust than Martingale but still negative EV. You're just spreading the loss over more rounds.</li>
+      <li><strong>Fibonacci</strong> — bet the next number in sequence after each loss. Same problem: doesn't change expected value, just changes variance profile.</li>
+      <li><strong>Labouchere</strong> — cancellation system. Complex to track and equally powerless against a fixed house edge.</li>
+    </ul>
+    <p>
+      The only edge available to a Crazy Time player is choosing the right <a href="/crazy-time-rtp">RTP segment</a>, sizing bets correctly for their bankroll, and using a hard stop-loss. Everything else is variance theatre.
+    </p>
 
     <h2>Common Mistakes to Avoid</h2>
     <ul>

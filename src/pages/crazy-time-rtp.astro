@@ -3,10 +3,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import StakeCTA from '../components/StakeCTA.astro';
 import { BASE_RATES, SEGMENT_LABELS } from '../lib/constants';
 import type { Segment } from '../lib/types';
+
+const tableSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Table',
+  about: {
+    '@type': 'Thing',
+    name: 'Crazy Time RTP Per Segment',
+  },
+  description: 'Return-to-player percentages and house edge for each Crazy Time wheel segment including all four bonus rounds.',
+};
 ---
 <BaseLayout
   title="Crazy Time RTP Explained — Odds, House Edge & Payouts 2026"
-  description="Crazy Time RTP explained clearly. Exact return-to-player percentages, house edge per segment, and what the odds mean for your session."
+  description="Crazy Time RTP per segment: 1 (94.4%), 2 (96.2%), 10 (96.3%), plus all 4 bonus rounds explained. Use the data to build a smarter betting strategy."
+  schema={tableSchema}
 >
   <div class="max-w-3xl mx-auto px-4 py-10">
     <h1>Crazy Time RTP Explained for 2026</h1>
@@ -27,14 +38,14 @@ import type { Segment } from '../lib/types';
         </thead>
         <tbody class="text-slate-300">
           {[
-            { seg: '1',         payout: '1:1',          rtp: '94.4%' },
-            { seg: '2',         payout: '2:1',          rtp: '96.2%' },
-            { seg: '5',         payout: '5:1',          rtp: '94.4%' },
-            { seg: '10',        payout: '10:1',         rtp: '96.3%' },
-            { seg: 'CoinFlip',  payout: 'Bonus (×2–×1000)', rtp: '95.7%' },
-            { seg: 'CashHunt',  payout: 'Bonus (×10+)',  rtp: '95.5%' },
-            { seg: 'Pachinko',  payout: 'Bonus (×2–×10000)', rtp: '94.3%' },
-            { seg: 'CrazyTime', payout: 'Bonus (up to ×20000)', rtp: '94.4%' },
+            { seg: '1',         payout: '1:1',                   rtp: '94.4%' },
+            { seg: '2',         payout: '2:1',                   rtp: '96.2%' },
+            { seg: '5',         payout: '5:1',                   rtp: '94.4%' },
+            { seg: '10',        payout: '10:1',                  rtp: '96.3%' },
+            { seg: 'CoinFlip',  payout: 'Bonus (×2–×1000)',      rtp: '95.7%' },
+            { seg: 'CashHunt',  payout: 'Bonus (×10+)',          rtp: '95.5%' },
+            { seg: 'Pachinko',  payout: 'Bonus (×2–×10000)',     rtp: '94.3%' },
+            { seg: 'CrazyTime', payout: 'Bonus (up to ×20000)',  rtp: '94.4%' },
           ].map(row => (
             <tr class="border-b border-slate-700/50">
               <td class="py-3 pr-4 font-semibold text-slate-100">
@@ -51,6 +62,43 @@ import type { Segment } from '../lib/types';
       </table>
     </div>
 
+    <h2>Crazy Time House Edge Per Segment</h2>
+    <p>
+      The house edge is simply 100% minus RTP. Here's what the casino keeps per $1 wagered on each segment:
+    </p>
+    <div class="overflow-x-auto mb-8">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-slate-400 border-b border-slate-700 text-left">
+            <th class="pb-2 pr-4">Segment</th>
+            <th class="pb-2 pr-4">House Edge</th>
+            <th class="pb-2">Cost per $100 wagered</th>
+          </tr>
+        </thead>
+        <tbody class="text-slate-300">
+          {[
+            { seg: '1',         edge: '5.6%',  cost: '$5.60' },
+            { seg: '2',         edge: '3.8%',  cost: '$3.80' },
+            { seg: '5',         edge: '5.6%',  cost: '$5.60' },
+            { seg: '10',        edge: '3.7%',  cost: '$3.70' },
+            { seg: 'Coin Flip', edge: '4.3%',  cost: '$4.30' },
+            { seg: 'Cash Hunt', edge: '4.5%',  cost: '$4.50' },
+            { seg: 'Pachinko',  edge: '5.7%',  cost: '$5.70' },
+            { seg: 'Crazy Time',edge: '5.6%',  cost: '$5.60' },
+          ].map(row => (
+            <tr class="border-b border-slate-700/50">
+              <td class="py-3 pr-4 font-semibold text-slate-100">{row.seg}</td>
+              <td class="py-3 pr-4 text-red-400 font-semibold">{row.edge}</td>
+              <td class="py-3 text-slate-400">{row.cost}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p>
+      The <strong>2 and 10 segments have the lowest house edge</strong> (3.7–3.8%) — nearly a full 2% cheaper than the 1, 5, Pachinko, and Crazy Time segments. Over a long session, this difference compounds significantly.
+    </p>
+
     <h2>What RTP Means in Practice</h2>
     <p>
       A 96% RTP means for every $100 wagered over a long session, you can expect $96 back on average. The remaining $4 is the house edge. This is a theoretical long-term average — in any single session, results can vary wildly in either direction.
@@ -59,9 +107,19 @@ import type { Segment } from '../lib/types';
       For <a href="/crazy-time-strategy">strategy purposes</a>, the main wheel segments (1, 2, 5, 10) have RTPs of 94–96%. The bonus rounds have similar RTPs but offer massive variance — they can pay 100× to 20,000× your bonus stake on a single spin.
     </p>
 
-    <h2>House Edge Explained</h2>
+    <h2>How Does Crazy Time RTP Compare to Other Live Games?</h2>
     <p>
-      The house edge is 100% minus RTP. For Crazy Time, this averages around 4–6% depending on the bet type. This means the casino keeps 4–6 cents per $1 wagered over time.
+      Crazy Time's 94–96% RTP range is competitive for live entertainment games but lower than pure table games:
+    </p>
+    <ul>
+      <li><strong>Blackjack (optimal play)</strong>: 99.5% RTP — lowest house edge in the casino</li>
+      <li><strong>European Roulette</strong>: 97.3% RTP</li>
+      <li><strong>Crazy Time (2 or 10 segment)</strong>: 96.2–96.3% RTP</li>
+      <li><strong>Crazy Time (1, 5, or bonus)</strong>: 94.3–94.4% RTP</li>
+      <li><strong>Most video slots</strong>: 94–96% RTP</li>
+    </ul>
+    <p>
+      Crazy Time trades lower RTP for entertainment value and the possibility of massive multipliers. That's the deal — go in knowing it.
     </p>
 
     <h2>Using RTP in Your Strategy</h2>
@@ -81,6 +139,7 @@ import type { Segment } from '../lib/types';
       {[
         { q: 'What is the overall Crazy Time RTP?', a: 'The overall game RTP ranges from 94.3% to 96.3% depending on which segments you bet on.' },
         { q: 'Which Crazy Time segment has the best RTP?', a: 'The 10 segment has the highest published RTP at 96.3%, followed closely by the 2 segment at 96.2%.' },
+        { q: 'What is the Crazy Time house edge?', a: 'The house edge ranges from 3.7% (10 segment) to 5.7% (Pachinko). The 2 and 10 segments offer the best value at under 4% house edge.' },
         { q: 'Does RTP change between sessions?', a: 'No. RTP is a fixed mathematical property of the game. Individual session results are random.' },
         { q: 'Is the house edge different at different times of day?', a: 'No. The wheel odds and payouts are constant. Time of day has no effect on RTP.' },
         { q: 'Can I use RTP to predict the next spin?', a: 'No. Each spin is independent. RTP describes long-run averages, not short-run patterns. Use our tracker for frequency data.' },
