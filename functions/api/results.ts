@@ -1,8 +1,9 @@
-import type { APIRoute } from 'astro';
+interface Env {
+  TRACKSINO_TOKEN: string;
+}
 
-export const GET: APIRoute = async () => {
-  const token = import.meta.env.TRACKSINO_TOKEN;
-
+export const onRequestGet: PagesFunction<Env> = async ({ env }) => {
+  const token = env.TRACKSINO_TOKEN;
   if (!token) {
     return new Response(JSON.stringify({ error: 'Token not configured' }), {
       status: 500,
@@ -28,13 +29,12 @@ export const GET: APIRoute = async () => {
       );
     }
 
-    const data = await upstream.json();
-
+    const data = await upstream.json() as Record<string, unknown>;
     return new Response(
       JSON.stringify({
         updated_at: new Date().toISOString(),
-        rows: data.data ?? data.rows ?? [],
-        count: data.count ?? data.total ?? 0,
+        rows: (data.data ?? data.rows ?? []) as unknown[],
+        count: (data.count ?? data.total ?? 0) as number,
       }),
       {
         status: 200,
@@ -44,7 +44,7 @@ export const GET: APIRoute = async () => {
         },
       }
     );
-  } catch (err) {
+  } catch {
     return new Response(JSON.stringify({ error: 'Fetch failed' }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
