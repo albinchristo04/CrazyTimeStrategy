@@ -1,10 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import StakeCTA from '../components/StakeCTA.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'What is Crazy Time?', acceptedAnswer: { '@type': 'Answer', text: 'Crazy Time is a live casino wheel game by Evolution Gaming with 54 segments and four bonus rounds: Coin Flip, Cash Hunt, Pachinko, and Crazy Time.' } },
+    { '@type': 'Question', name: 'How do you play Crazy Time?', acceptedAnswer: { '@type': 'Answer', text: 'Place bets on one or more wheel segments before the spin. If the wheel lands on your segment, you win the listed payout. If a bonus segment lands, a bonus round is triggered.' } },
+    { '@type': 'Question', name: 'Is Crazy Time good for beginners?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, with a small bankroll and conservative bet sizing. Start with bets on the 1 and 2 segments and keep bets under 1-2% of your session budget.' } },
+  ],
+};
 ---
 <BaseLayout
   title="Crazy Time Guide for Beginners — How to Play in 2026"
   description="The complete beginner guide to Crazy Time. How the wheel works, how to place bets, bonus round rules, and how to start safely."
+  schema={schema}
 >
   <div class="max-w-3xl mx-auto px-4 py-10">
     <h1>Crazy Time Guide for Beginners 2026</h1>

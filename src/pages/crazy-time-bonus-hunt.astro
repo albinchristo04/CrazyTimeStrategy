@@ -1,10 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import StakeCTA from '../components/StakeCTA.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'What is bonus hunting in Crazy Time?', acceptedAnswer: { '@type': 'Answer', text: 'Bonus hunting means placing dedicated bets on bonus segments (Coin Flip, Cash Hunt, Pachinko, Crazy Time) each round to increase the frequency of entering bonus rounds.' } },
+    { '@type': 'Question', name: 'Which Crazy Time bonus round is best to target?', acceptedAnswer: { '@type': 'Answer', text: 'Crazy Time offers the highest upside (up to ×20,000). Pachinko is the most balanced. Coin Flip has the most frequent occurrence. Your target depends on whether you want frequency or max payout.' } },
+    { '@type': 'Question', name: 'How much should I bet on bonus segments?', acceptedAnswer: { '@type': 'Answer', text: 'Allocate 20-40% of your per-round stake to bonus segments. This keeps you alive on the main wheel while maintaining consistent bonus round coverage.' } },
+  ],
+};
 ---
 <BaseLayout
   title="Crazy Time Bonus Hunt Strategy 2026 — Maximize Bonus Rounds"
   description="How to bonus hunt in Crazy Time. Which bonus round to target, how to size your bonus bets, and when bonus hunting makes sense."
+  schema={schema}
 >
   <div class="max-w-3xl mx-auto px-4 py-10">
     <h1>Crazy Time Bonus Hunt Strategy 2026</h1>

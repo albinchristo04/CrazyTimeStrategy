@@ -1,10 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import StakeCTA from '../components/StakeCTA.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'How does Pachinko work in Crazy Time?', acceptedAnswer: { '@type': 'Answer', text: 'A puck drops from the top of a pegboard into one of several multiplier slots at the bottom. If it lands on DOUBLE, all multipliers double and the puck drops again. This can repeat multiple times.' } },
+    { '@type': 'Question', name: 'What is the maximum payout in Crazy Time Pachinko?', acceptedAnswer: { '@type': 'Answer', text: 'Pachinko can theoretically reach ×10,000 through repeated DOUBLE hits. In practice, typical rounds pay ×2 to ×100, with larger payouts being rare.' } },
+    { '@type': 'Question', name: 'Is Pachinko worth betting on in Crazy Time?', acceptedAnswer: { '@type': 'Answer', text: 'Pachinko is a high-variance bet — most rounds pay small multipliers but the DOUBLE mechanic creates occasional massive wins. It suits players with a dedicated bonus budget and tolerance for variance.' } },
+  ],
+};
 ---
 <BaseLayout
   title="Pachinko Strategy — Crazy Time Bonus Guide 2026"
   description="Best Pachinko strategy for Crazy Time. How the Pachinko bonus works, max payout, and how to size your Pachinko bet."
+  schema={schema}
 >
   <div class="max-w-3xl mx-auto px-4 py-10">
     <h1>Pachinko Strategy for Crazy Time 2026</h1>

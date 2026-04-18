@@ -2,10 +2,22 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import StakeCTA from '../components/StakeCTA.astro';
 import Predictor from '../components/Predictor';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Crazy Time Live RNG Pattern Tracker',
+  applicationCategory: 'UtilityApplication',
+  operatingSystem: 'Web',
+  description: 'Track live Crazy Time results, frequency analysis, gap data, and pattern-based predictions. Updated on demand with real game data.',
+  url: 'https://crazytimestrategy.top/crazy-time-predictor',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+};
 ---
 <BaseLayout
   title="Crazy Time Predictor — Live RNG Pattern Tracker 2026"
   description="Track live Crazy Time results, frequency analysis, gap data, and pattern-based predictions. Updated on demand with real game data."
+  schema={schema}
 >
   <div class="max-w-4xl mx-auto px-4 py-10">
     <div class="mb-8">

@@ -3,10 +3,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import StakeCTA from '../components/StakeCTA.astro';
 import { BASE_RATES, SEGMENT_LABELS } from '../lib/constants';
 import type { Segment } from '../lib/types';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'What are the odds of each Crazy Time segment?', acceptedAnswer: { '@type': 'Answer', text: 'Segment 1: 44.4% (24/54). Segment 2: 24.1% (13/54). Segment 5: 13.0% (7/54). Segment 10: 7.4% (4/54). Coin Flip: 3.7% (2/54). Cash Hunt: 3.7% (2/54). Pachinko: 3.7% (2/54). Crazy Time: 1.9% (1/54).' } },
+    { '@type': 'Question', name: 'How often does a bonus round occur in Crazy Time?', acceptedAnswer: { '@type': 'Answer', text: 'Bonus rounds (all four combined) land on 7 of 54 segments, giving a 13% chance per spin. On average, a bonus round occurs every 7-8 spins.' } },
+    { '@type': 'Question', name: 'What are the odds of hitting the Crazy Time bonus?', acceptedAnswer: { '@type': 'Answer', text: 'The Crazy Time bonus occupies 1 of 54 segments, giving approximately a 1.85% chance per spin — roughly once every 54 spins on average.' } },
+  ],
+};
 ---
 <BaseLayout
   title="Crazy Time Odds Explained — Probability Per Segment 2026"
   description="Exact Crazy Time odds per segment. Probability of each wheel result, bonus round chances, and what the numbers mean for your bets."
+  schema={schema}
 >
   <div class="max-w-3xl mx-auto px-4 py-10">
     <h1>Crazy Time Odds Explained for 2026</h1>

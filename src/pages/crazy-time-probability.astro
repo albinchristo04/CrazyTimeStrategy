@@ -1,10 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import StakeCTA from '../components/StakeCTA.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'Is Crazy Time based on probability?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Each spin is an independent random event. The probability of each outcome is fixed by the number of segments on the wheel (54 total).' } },
+    { '@type': 'Question', name: 'What is the expected value of a Crazy Time bet?', acceptedAnswer: { '@type': 'Answer', text: 'Expected value is negative for all segments — that is the house edge. The 2 and 10 segments have the best EV at approximately -3.8% and -3.7% per unit staked.' } },
+    { '@type': 'Question', name: 'Does probability change after a long losing streak in Crazy Time?', acceptedAnswer: { '@type': 'Answer', text: 'No. Each spin is independent. A losing streak does not change the probability of the next spin — this is a common gambler\'s fallacy.' } },
+  ],
+};
 ---
 <BaseLayout
   title="Crazy Time Probability — How the Math Works 2026"
   description="Crazy Time probability explained simply. Wheel math, expected value, variance, and what probability means for your betting decisions."
+  schema={schema}
 >
   <div class="max-w-3xl mx-auto px-4 py-10">
     <h1>Crazy Time Probability Explained 2026</h1>

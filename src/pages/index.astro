@@ -2,10 +2,21 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import StakeCTA from '../components/StakeCTA.astro';
 import HomepagePredictor from '../components/HomepagePredictor';
+
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'CrazyTimeStrategy.top',
+  url: 'https://crazytimestrategy.top',
+  logo: 'https://crazytimestrategy.top/og-default.svg',
+  description: 'Crazy Time strategy guides, bankroll tools, RTP data, and the only live RNG pattern tracker.',
+  sameAs: [],
+};
 ---
 <BaseLayout
   title="Crazy Time Strategy — Guides, Tips & Tools"
   description="Master Crazy Time with strategy guides, bankroll tools, RTP data, and a live RNG tracker. Play smarter from your first session."
+  schema={orgSchema}
 >
   <!-- Hero -->
   <section class="bg-gradient-to-b from-slate-800 to-slate-900 py-16 px-4 text-center">

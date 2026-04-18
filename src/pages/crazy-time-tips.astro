@@ -1,10 +1,25 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import StakeCTA from '../components/StakeCTA.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: '10 Crazy Time Tips for Smarter Play',
+  description: 'Practical tips covering bankroll management, bonus rounds, bet sizing, and session discipline for Crazy Time players.',
+  step: [
+    { '@type': 'HowToStep', name: 'Set a session budget before you start', text: 'Decide how much you are willing to lose before opening the game. Never reload mid-session.' },
+    { '@type': 'HowToStep', name: 'Keep bets at 1-2% of session bankroll', text: 'This gives you 50-100 rounds of play before hitting your stop-loss, surviving variance long enough to hit bonus rounds.' },
+    { '@type': 'HowToStep', name: 'Always cover at least one bonus segment', text: 'Place a small bet on a bonus round each spin. A single bonus hit can outperform dozens of main wheel wins.' },
+    { '@type': 'HowToStep', name: 'Use a hard stop-loss of 30-40%', text: 'If your session bankroll drops by 30-40%, stop. Do not chase losses — walk away and return with a fresh session.' },
+    { '@type': 'HowToStep', name: 'Bet on the 2 and 10 segments for better RTP', text: 'The 2 (96.2%) and 10 (96.3%) segments have the best RTP. Avoid the 1 and 5 for main bets if you want the best mathematical value.' },
+  ],
+};
 ---
 <BaseLayout
   title="Crazy Time Tips — 10 Tips Every Player Should Know in 2026"
   description="10 practical Crazy Time tips covering bankroll, bonus rounds, bet sizing, and session discipline. Clear and direct — no fluff."
+  schema={schema}
 >
   <div class="max-w-3xl mx-auto px-4 py-10">
     <h1>Crazy Time Tips for 2026</h1>

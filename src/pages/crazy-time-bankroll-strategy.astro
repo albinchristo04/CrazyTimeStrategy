@@ -1,10 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import StakeCTA from '../components/StakeCTA.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'How much bankroll do I need for Crazy Time?', acceptedAnswer: { '@type': 'Answer', text: 'Bring at least 50 bets worth of bankroll. If betting $2 per round, have at least $100 in your session budget.' } },
+    { '@type': 'Question', name: 'What bet size should I use in Crazy Time?', acceptedAnswer: { '@type': 'Answer', text: 'Conservative: 1% of session bankroll. Balanced: 2%. Aggressive: 3-5%. Never exceed 5% of your session budget per round.' } },
+    { '@type': 'Question', name: 'What stop-loss should I set for Crazy Time?', acceptedAnswer: { '@type': 'Answer', text: 'Set a stop-loss of 30-50% of your session bankroll before you start. If you hit it, end the session. Do not reload during the same session.' } },
+  ],
+};
 ---
 <BaseLayout
   title="Crazy Time Bankroll Strategy — Budget & Bet Sizing Guide 2026"
   description="How to manage your Crazy Time bankroll. Session budgets, stop-loss rules, bet sizing formulas, and the most common mistakes to avoid."
+  schema={schema}
 >
   <div class="max-w-3xl mx-auto px-4 py-10">
     <h1>Crazy Time Bankroll Strategy 2026</h1>

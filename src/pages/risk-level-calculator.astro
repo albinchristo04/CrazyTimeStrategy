@@ -2,10 +2,22 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BankrollCalculator from '../components/BankrollCalculator';
 import StakeCTA from '../components/StakeCTA.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Crazy Time Risk Level Calculator',
+  applicationCategory: 'UtilityApplication',
+  operatingSystem: 'Web',
+  description: 'Calculate your Crazy Time risk level and get a personalized strategy recommendation with exact bet sizes.',
+  url: 'https://crazytimestrategy.top/risk-level-calculator',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+};
 ---
 <BaseLayout
   title="Crazy Time Risk Level Calculator — Conservative to Aggressive 2026"
   description="Calculate your Crazy Time risk level and get a strategy recommendation. Conservative, balanced, or aggressive — with exact bet sizes."
+  schema={schema}
 >
   <div class="max-w-3xl mx-auto px-4 py-10">
     <h1>Crazy Time Risk Level Calculator</h1>

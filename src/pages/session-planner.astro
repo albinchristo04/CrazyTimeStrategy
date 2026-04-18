@@ -1,10 +1,22 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import StakeCTA from '../components/StakeCTA.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Crazy Time Session Planner',
+  applicationCategory: 'UtilityApplication',
+  operatingSystem: 'Web',
+  description: 'Plan your Crazy Time session before you play. Set bankroll, stop-loss, take-profit, and bet sizing rules in one place.',
+  url: 'https://crazytimestrategy.top/session-planner',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+};
 ---
 <BaseLayout
   title="Crazy Time Session Planner — Free Tool 2026"
   description="Plan your Crazy Time session before you play. Set your bankroll, stop-loss, take-profit, and bet sizing rules in one place."
+  schema={schema}
 >
   <div class="max-w-3xl mx-auto px-4 py-10">
     <h1>Crazy Time Session Planner</h1>

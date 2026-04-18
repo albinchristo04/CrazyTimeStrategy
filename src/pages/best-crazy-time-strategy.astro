@@ -1,10 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import StakeCTA from '../components/StakeCTA.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'What is the best Crazy Time strategy?', acceptedAnswer: { '@type': 'Answer', text: 'The best strategy depends on your risk tolerance. Conservative players should flat bet on the 1 and 2 segments with 1% stake per round. Bonus hunters should dedicate a portion of each bet to one bonus segment.' } },
+    { '@type': 'Question', name: 'Does flat betting work in Crazy Time?', acceptedAnswer: { '@type': 'Answer', text: 'Flat betting is the most sustainable approach. It controls variance, extends sessions, and prevents the accelerated losses that come from progressive systems.' } },
+    { '@type': 'Question', name: 'What is the safest Crazy Time strategy?', acceptedAnswer: { '@type': 'Answer', text: 'The safest approach is to bet primarily on the 1 segment (highest frequency), keep bets at 1% of session bankroll, set a 30% stop-loss, and stick to it.' } },
+  ],
+};
 ---
 <BaseLayout
   title="Best Crazy Time Strategy in 2026 — Low Risk + Smart Bankroll"
   description="The best Crazy Time strategies for 2026 ranked by risk level. Flat betting, bonus hunting, and conservative approaches with bankroll rules."
+  schema={schema}
 >
   <div class="max-w-3xl mx-auto px-4 py-10">
     <h1>Best Crazy Time Strategy in 2026</h1>

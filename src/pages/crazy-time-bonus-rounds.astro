@@ -1,10 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import StakeCTA from '../components/StakeCTA.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'How many bonus rounds does Crazy Time have?', acceptedAnswer: { '@type': 'Answer', text: 'Crazy Time has four bonus rounds: Coin Flip, Cash Hunt, Pachinko, and the Crazy Time bonus.' } },
+    { '@type': 'Question', name: 'What is the maximum payout in Crazy Time bonus rounds?', acceptedAnswer: { '@type': 'Answer', text: 'The Crazy Time bonus can pay up to ×20,000. Pachinko can reach ×10,000. Coin Flip goes up to ×1,000. Cash Hunt multipliers typically range from ×10 to ×500+.' } },
+    { '@type': 'Question', name: 'Which Crazy Time bonus round pays most often?', acceptedAnswer: { '@type': 'Answer', text: 'Coin Flip lands most frequently (2 segments on the 54-segment wheel). Crazy Time is rarest (1 segment) but has the highest potential payout.' } },
+  ],
+};
 ---
 <BaseLayout
   title="Crazy Time Bonus Rounds Explained — All 4 Bonuses 2026"
   description="All four Crazy Time bonus rounds explained. Coin Flip, Cash Hunt, Pachinko, and Crazy Time bonus — how they work, max payouts, and strategy tips."
+  schema={schema}
 >
   <div class="max-w-3xl mx-auto px-4 py-10">
     <h1>Crazy Time Bonus Rounds Explained 2026</h1>

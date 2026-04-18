@@ -2,10 +2,22 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BankrollCalculator from '../components/BankrollCalculator';
 import StakeCTA from '../components/StakeCTA.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Crazy Time Bet Size Calculator',
+  applicationCategory: 'UtilityApplication',
+  operatingSystem: 'Web',
+  description: 'Calculate the optimal Crazy Time bet size for your bankroll based on proven bankroll management percentages.',
+  url: 'https://crazytimestrategy.top/bet-size-calculator',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+};
 ---
 <BaseLayout
   title="Crazy Time Bet Size Calculator — Free Tool 2026"
   description="Calculate the optimal Crazy Time bet size for your bankroll. Based on proven bankroll management percentages."
+  schema={schema}
 >
   <div class="max-w-3xl mx-auto px-4 py-10">
     <h1>Crazy Time Bet Size Calculator</h1>

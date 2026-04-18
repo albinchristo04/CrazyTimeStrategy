@@ -1,10 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import StakeCTA from '../components/StakeCTA.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'What is the top slot in Crazy Time?', acceptedAnswer: { '@type': 'Answer', text: 'The top slot spins before the main wheel and randomly selects a segment plus a multiplier (e.g. ×2, ×3, ×5). If the main wheel lands on that same segment, your payout is multiplied by that value.' } },
+    { '@type': 'Question', name: 'How does the top slot multiplier work?', acceptedAnswer: { '@type': 'Answer', text: 'The top slot multiplier applies only to the matching segment. If the top slot shows "2 ×5" and the main wheel lands on 2, all bets on 2 pay at ×5 instead of the normal ×2.' } },
+    { '@type': 'Question', name: 'Can the top slot affect bonus rounds?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. If the top slot selects a bonus segment (e.g. Pachinko ×3), and the main wheel also lands on Pachinko, all Pachinko multipliers in the bonus round are tripled.' } },
+  ],
+};
 ---
 <BaseLayout
   title="Top Slot Strategy — Crazy Time Multiplier Guide 2026"
   description="How the Crazy Time top slot works, how multipliers apply, and how to factor the top slot into your betting strategy."
+  schema={schema}
 >
   <div class="max-w-3xl mx-auto px-4 py-10">
     <h1>Crazy Time Top Slot Strategy 2026</h1>

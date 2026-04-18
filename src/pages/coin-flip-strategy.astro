@@ -1,10 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import StakeCTA from '../components/StakeCTA.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'How does the Coin Flip bonus work in Crazy Time?', acceptedAnswer: { '@type': 'Answer', text: 'When Coin Flip lands, a coin with two multipliers (one per side) is flipped. The result determines which multiplier is paid to all Coin Flip bettors. The top slot can double the winning multiplier before the flip.' } },
+    { '@type': 'Question', name: 'What is the maximum payout for Coin Flip in Crazy Time?', acceptedAnswer: { '@type': 'Answer', text: 'Coin Flip can pay up to ×1,000 in rare cases, though typical outcomes range from ×2 to ×50. The top slot can add another multiplier on top.' } },
+    { '@type': 'Question', name: 'Should I bet on Coin Flip in Crazy Time?', acceptedAnswer: { '@type': 'Answer', text: 'Coin Flip is the most frequently landing bonus (2 of 54 segments). It is suitable for players who want consistent bonus action with lower variance than Pachinko or Crazy Time.' } },
+  ],
+};
 ---
 <BaseLayout
   title="Coin Flip Strategy — Crazy Time Bonus Guide 2026"
   description="Best Coin Flip strategy for Crazy Time. How the bonus works, how to size your Coin Flip bet, and when to target it."
+  schema={schema}
 >
   <div class="max-w-3xl mx-auto px-4 py-10">
     <h1>Coin Flip Strategy for Crazy Time 2026</h1>

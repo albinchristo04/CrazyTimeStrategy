@@ -1,10 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import StakeCTA from '../components/StakeCTA.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'Is Crazy Time rigged?', acceptedAnswer: { '@type': 'Answer', text: 'No. Crazy Time uses a physical wheel manufactured and certified by Evolution Gaming. Results are independently audited by testing labs like eCOGRA and GLI. The game is not software-RNG — it is a real spinning wheel filmed live.' } },
+    { '@type': 'Question', name: 'How is Crazy Time fairness verified?', acceptedAnswer: { '@type': 'Answer', text: 'Evolution Gaming publishes RTP and game math documents. The physical wheel is regularly inspected by independent testing agencies. Licensed casinos are required to offer only certified games.' } },
+    { '@type': 'Question', name: 'Can the casino manipulate Crazy Time results?', acceptedAnswer: { '@type': 'Answer', text: 'No. The game is hosted by Evolution Gaming, not the individual casino. The casino cannot influence the wheel results — they pay Evolution for a live feed of the game.' } },
+  ],
+};
 ---
 <BaseLayout
   title="Is Crazy Time Rigged? The Truth Explained 2026"
   description="Is Crazy Time rigged? The honest answer with evidence. How Evolution Gaming's wheel is certified, audited, and how to verify fairness yourself."
+  schema={schema}
 >
   <div class="max-w-3xl mx-auto px-4 py-10">
     <h1>Is Crazy Time Rigged? The Truth for 2026</h1>

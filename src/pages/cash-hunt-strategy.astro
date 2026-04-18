@@ -1,10 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import StakeCTA from '../components/StakeCTA.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'How does Cash Hunt work in Crazy Time?', acceptedAnswer: { '@type': 'Answer', text: 'Cash Hunt shows a grid of 108 symbols, each hiding a multiplier. Players pick one symbol before a countdown ends. The symbols then scatter randomly and reveal their multipliers.' } },
+    { '@type': 'Question', name: 'Is there a strategy for picking symbols in Cash Hunt?', acceptedAnswer: { '@type': 'Answer', text: 'No. Symbol placement is randomized after your selection. Any picking pattern or preference has no effect on the outcome — all picks have statistically equal expected value.' } },
+    { '@type': 'Question', name: 'What is the maximum payout in Cash Hunt?', acceptedAnswer: { '@type': 'Answer', text: 'Cash Hunt multipliers typically range from ×10 to ×500. Higher multipliers are possible but rare. The top slot can add extra multipliers before the round begins.' } },
+  ],
+};
 ---
 <BaseLayout
   title="Cash Hunt Strategy — Crazy Time Bonus Guide 2026"
   description="Best Cash Hunt strategy for Crazy Time. How the bonus works, how to pick your symbol, and how to size your Cash Hunt stake."
+  schema={schema}
 >
   <div class="max-w-3xl mx-auto px-4 py-10">
     <h1>Cash Hunt Strategy for Crazy Time 2026</h1>

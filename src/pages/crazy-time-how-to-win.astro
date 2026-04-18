@@ -1,10 +1,25 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import StakeCTA from '../components/StakeCTA.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to Win at Crazy Time',
+  description: 'A realistic, step-by-step approach to maximizing your Crazy Time sessions through bankroll management and smart bet structure.',
+  step: [
+    { '@type': 'HowToStep', name: 'Accept the house edge', text: 'No system beats the house edge. The goal is to manage variance, extend play, and give yourself the best chance of hitting a bonus round payout.' },
+    { '@type': 'HowToStep', name: 'Choose high-RTP segments', text: 'Bet primarily on the 2 and 10 segments which have the best RTP (96.2–96.3%). Avoid betting on every segment simultaneously.' },
+    { '@type': 'HowToStep', name: 'Size bets to your bankroll', text: 'Use 1-2% of your session budget per round. This keeps you in the game long enough for variance to work in your favour during a bonus round.' },
+    { '@type': 'HowToStep', name: 'Maintain bonus round coverage', text: 'Include one bonus segment in every round. Bonus rounds are where significant wins happen — you need to be in them to benefit.' },
+    { '@type': 'HowToStep', name: 'Set take-profit and stop-loss levels', text: 'Decide before you start: if you are up 50%, take some profit. If you are down 40%, stop. Discipline during a winning streak matters as much as loss control.' },
+  ],
+};
 ---
 <BaseLayout
   title="How to Win at Crazy Time — Realistic Strategies for 2026"
   description="Realistic guide to winning at Crazy Time. What actually works, what does not, and how to maximize your sessions."
+  schema={schema}
 >
   <div class="max-w-3xl mx-auto px-4 py-10">
     <h1>How to Win at Crazy Time in 2026</h1>

@@ -1,10 +1,26 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import StakeCTA from '../components/StakeCTA.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How Crazy Time Works — Game Flow Each Round',
+  description: 'Step-by-step explanation of the complete Crazy Time game mechanics from betting phase to payout.',
+  step: [
+    { '@type': 'HowToStep', name: 'Betting phase opens', text: 'A countdown timer (usually 15-20 seconds) opens the betting window. Place bets on any of the 8 segments: 1, 2, 5, 10, Coin Flip, Cash Hunt, Pachinko, or Crazy Time.' },
+    { '@type': 'HowToStep', name: 'Top slot spins', text: 'Before the main wheel spins, a top slot above the wheel spins and randomly selects a segment and multiplier. If it matches your bet, your payout for that segment is multiplied.' },
+    { '@type': 'HowToStep', name: 'Main wheel spins', text: 'The host spins the 54-segment physical wheel. The result is determined by where the flapper lands.' },
+    { '@type': 'HowToStep', name: 'Result resolved', text: 'If a number segment wins, players who bet on that number receive the listed payout (e.g., 1:1 for the 1 segment). Top slot multipliers are applied.' },
+    { '@type': 'HowToStep', name: 'Bonus round triggered (if applicable)', text: 'If a bonus segment wins, the game transitions to the bonus round environment. Only players who bet on that bonus segment participate.' },
+    { '@type': 'HowToStep', name: 'Bonus round resolves', text: 'The bonus round plays out (Coin Flip, Cash Hunt, Pachinko, or the Crazy Time wheel-within-a-wheel). Winnings are paid and the next round begins.' },
+  ],
+};
 ---
 <BaseLayout
   title="How Crazy Time Works — Complete Game Mechanics 2026"
   description="How Crazy Time works explained from first principles. The wheel, the top slot, bonus rounds, and the RNG behind each spin."
+  schema={schema}
 >
   <div class="max-w-3xl mx-auto px-4 py-10">
     <h1>How Crazy Time Works 2026</h1>
