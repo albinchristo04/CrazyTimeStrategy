@@ -1,0 +1,220 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StakeCTA from '../components/StakeCTA.astro';
+import { BASE_RATES, SEGMENT_LABELS } from '../lib/constants';
+import type { Segment } from '../lib/types';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What are the Crazy Time statistics per segment?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Segment 1 lands 44.4% of spins (24/54 segments). Segment 2: 24.1% (13/54). Segment 5: 13.0% (7/54). Segment 10: 7.4% (4/54). All four bonus rounds combined: 13.0% (7/54). Individual bonus segments each occupy ~3.7%, except Crazy Time at 1.9%.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'How often does a bonus round occur in Crazy Time?',
+      acceptedAnswer: { '@type': 'Answer', text: 'On average, a bonus round occurs every 7–8 spins (13% probability per spin). In a 100-spin session you can statistically expect 12–14 bonus rounds, though actual results vary due to random variance.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I track Crazy Time live statistics?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Use the live Crazy Time tracker at CrazyTimeStrategy.top. It fetches real game data, calculates gap scores, frequency deviations, and pattern-based signals across the last 100 results.' },
+    },
+  ],
+};
+
+const segmentStats = [
+  { seg: '1',         label: 'Number 1',    count: 24, freq: '44.4%', rtp: '94.4%', avgGap: '2.3 spins',  maxGap: '~15 spins' },
+  { seg: '2',         label: 'Number 2',    count: 13, freq: '24.1%', rtp: '96.2%', avgGap: '4.2 spins',  maxGap: '~25 spins' },
+  { seg: '5',         label: 'Number 5',    count: 7,  freq: '13.0%', rtp: '94.4%', avgGap: '7.7 spins',  maxGap: '~45 spins' },
+  { seg: '10',        label: 'Number 10',   count: 4,  freq: '7.4%',  rtp: '96.3%', avgGap: '13.5 spins', maxGap: '~80 spins' },
+  { seg: 'CoinFlip',  label: 'Coin Flip',   count: 2,  freq: '3.7%',  rtp: '95.7%', avgGap: '27 spins',   maxGap: '~160 spins' },
+  { seg: 'CashHunt',  label: 'Cash Hunt',   count: 2,  freq: '3.7%',  rtp: '95.5%', avgGap: '27 spins',   maxGap: '~160 spins' },
+  { seg: 'Pachinko',  label: 'Pachinko',    count: 2,  freq: '3.7%',  rtp: '94.3%', avgGap: '27 spins',   maxGap: '~160 spins' },
+  { seg: 'CrazyTime', label: 'Crazy Time',  count: 1,  freq: '1.9%',  rtp: '94.4%', avgGap: '54 spins',   maxGap: '~320 spins' },
+];
+---
+<BaseLayout
+  title="Crazy Time Statistics — Frequency, Probability & Segment Data 2026"
+  description="Complete Crazy Time statistics: segment frequency, expected gaps, bonus round probability, RTP per segment, and how to read live stats to inform your betting."
+  schema={schema}
+>
+  <div class="max-w-3xl mx-auto px-4 py-10">
+    <h1>Crazy Time Statistics: Frequency, Gaps & Probability Data</h1>
+    <p class="text-lg text-slate-300">
+      Understanding Crazy Time statistics is the foundation of any informed betting approach. This page covers the hard numbers behind the game: how often each segment lands, what gap ranges to expect between hits, bonus round probability, and how to use live data from our tracker to supplement the base rates.
+    </p>
+
+    <h2>Complete Segment Statistics</h2>
+    <p>
+      The Crazy Time wheel has 54 segments. Every spin is independent — but the distribution of segments on the wheel creates fixed base probabilities that inform long-run expectations.
+    </p>
+    <div class="overflow-x-auto mb-8">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-slate-400 border-b border-slate-700 text-left">
+            <th class="pb-2 pr-3">Segment</th>
+            <th class="pb-2 pr-3">Wheel Count</th>
+            <th class="pb-2 pr-3">Frequency</th>
+            <th class="pb-2 pr-3">Avg Gap</th>
+            <th class="pb-2 pr-3">Max Gap (est.)</th>
+            <th class="pb-2">RTP</th>
+          </tr>
+        </thead>
+        <tbody class="text-slate-300">
+          {segmentStats.map(row => (
+            <tr class="border-b border-slate-700/50">
+              <td class="py-3 pr-3 font-semibold text-slate-100">{row.label}</td>
+              <td class="py-3 pr-3 text-slate-400">{row.count}</td>
+              <td class="py-3 pr-3 text-amber-400 font-semibold">{row.freq}</td>
+              <td class="py-3 pr-3">{row.avgGap}</td>
+              <td class="py-3 pr-3 text-slate-400">{row.maxGap}</td>
+              <td class="py-3 text-green-400 font-semibold">{row.rtp}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="text-xs text-slate-500">
+      Avg Gap = average spins between consecutive hits based on segment frequency. Max Gap = estimated 99th percentile dry spell. These are statistical expectations — actual gaps vary due to randomness.
+    </p>
+
+    <h2>Bonus Round Statistics</h2>
+    <p>
+      The four bonus rounds are the most strategically relevant statistics in Crazy Time. Here is the combined picture:
+    </p>
+    <div class="overflow-x-auto mb-8">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-slate-400 border-b border-slate-700 text-left">
+            <th class="pb-2 pr-4">Bonus Round</th>
+            <th class="pb-2 pr-4">Segments</th>
+            <th class="pb-2 pr-4">Probability Per Spin</th>
+            <th class="pb-2">Expected Frequency</th>
+          </tr>
+        </thead>
+        <tbody class="text-slate-300">
+          {[
+            { name: 'Coin Flip',   segs: 2, prob: '3.70%', freq: 'Every ~27 spins' },
+            { name: 'Cash Hunt',   segs: 2, prob: '3.70%', freq: 'Every ~27 spins' },
+            { name: 'Pachinko',    segs: 2, prob: '3.70%', freq: 'Every ~27 spins' },
+            { name: 'Crazy Time',  segs: 1, prob: '1.85%', freq: 'Every ~54 spins' },
+            { name: 'Any Bonus',   segs: 7, prob: '12.96%', freq: 'Every ~8 spins' },
+          ].map(row => (
+            <tr class="border-b border-slate-700/50">
+              <td class="py-3 pr-4 font-semibold text-slate-100">{row.name}</td>
+              <td class="py-3 pr-4 text-slate-400">{row.segs}</td>
+              <td class="py-3 pr-4 text-amber-400 font-semibold">{row.prob}</td>
+              <td class="py-3">{row.freq}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p>
+      In a 200-spin session, you can statistically expect approximately 25–26 bonus rounds in total. However, variance means you might see 15 or 35 — the expected value is a long-run average, not a per-session guarantee.
+    </p>
+
+    <h2>Understanding Gap Statistics</h2>
+    <p>
+      A "gap" is the number of spins since a segment last appeared. Gap statistics are the most useful live data point for session planning because they show how far a segment is deviating from its expected frequency.
+    </p>
+    <p>
+      Key concepts:
+    </p>
+    <ul>
+      <li><strong>Expected gap</strong>: The average number of spins between hits (1 ÷ frequency). For the Crazy Time bonus (1.85% probability), the expected gap is ~54 spins.</li>
+      <li><strong>Cold segment</strong>: A segment whose current gap significantly exceeds its expected gap. A Pachinko bonus not seen in 80 spins (vs 27 expected) is running cold.</li>
+      <li><strong>Hot segment</strong>: A segment hitting more frequently than expected over recent history.</li>
+      <li><strong>Gambler's fallacy warning</strong>: A cold segment is NOT "due." Each spin is independent. However, gap data is still useful for assessing whether current results are within normal statistical variance or significantly deviating from it.</li>
+    </ul>
+    <p>
+      Our <a href="/crazy-time-predictor">live Crazy Time tracker</a> calculates gap scores in real time, comparing the current gap to the expected average and flagging statistical outliers. This gives you context — not predictions.
+    </p>
+
+    <h2>Top Slot Statistics</h2>
+    <p>
+      The top slot spins before each main wheel spin and assigns a multiplier to a randomly selected segment. This adds an additional layer of statistics:
+    </p>
+    <ul>
+      <li>The top slot selects any of the 8 bet types with equal probability</li>
+      <li>Multipliers typically range from ×2 to ×10, with higher values being rarer</li>
+      <li>When the top slot matches the main wheel result, the multiplier applies to that segment's payout</li>
+      <li>For bonus rounds, a top slot match can multiply all in-round multipliers — dramatically increasing maximum payouts</li>
+    </ul>
+    <p>
+      The probability of the top slot matching the main wheel result depends on which segment wins. For the 1 segment (44% frequency), there is a reasonable chance of a top slot match. For the Crazy Time bonus (1.85%), a top slot match is a rare but spectacular combination.
+    </p>
+
+    <h2>What Crazy Time Statistics Tell Us (and What They Don't)</h2>
+    <p>
+      Statistics answer the question "how often does this happen on average" — they cannot answer "will this happen on the next spin." This distinction matters for strategy.
+    </p>
+    <p>
+      What statistics <strong>can</strong> tell you:
+    </p>
+    <ul>
+      <li>Which segments offer the best mathematical value (RTP)</li>
+      <li>How many bonus rounds to expect in a session of a given length</li>
+      <li>When a segment is running unusually cold or hot relative to its baseline</li>
+      <li>How to size your bankroll for a session of target duration</li>
+    </ul>
+    <p>
+      What statistics <strong>cannot</strong> tell you:
+    </p>
+    <ul>
+      <li>What the next spin will produce</li>
+      <li>When a cold segment will return</li>
+      <li>Whether the current session will be profitable</li>
+    </ul>
+    <p>
+      The best use of Crazy Time statistics is <strong>session planning</strong> — use the frequency data to set realistic expectations, size your bankroll correctly, and understand how much variance is normal. Combine this with the <a href="/crazy-time-rtp">RTP breakdown</a> to choose the most efficient bet structure, and use the live tracker for real-time context.
+    </p>
+
+    <h2>Using Statistics With the Live Tracker</h2>
+    <p>
+      Our <a href="/crazy-time-predictor">Crazy Time live predictor</a> fetches real game data and applies a four-signal algorithm to generate gap scores:
+    </p>
+    <ul>
+      <li><strong>Base rate signal</strong>: How likely is this segment to land based on its wheel frequency? (40% of the score)</li>
+      <li><strong>Gap boost signal</strong>: How far is the current gap from the expected average? High gap = higher signal. (30% of the score)</li>
+      <li><strong>Cold correction signal</strong>: Is the segment running cold over a longer window? (20% of the score)</li>
+      <li><strong>Recent dampening signal</strong>: Has this segment landed recently and frequently? If so, slightly reduces the score. (10% of the score)</li>
+    </ul>
+    <p>
+      The combined score is a statistical indicator — not a prediction. But it gives you a structured way to read the live data rather than relying on gut feeling.
+    </p>
+
+    <StakeCTA variant="card" text="Check Live Crazy Time Stats on Stake →" />
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="space-y-4">
+      {[
+        { q: 'What are the Crazy Time statistics per segment?', a: 'Segment 1: 44.4%. Segment 2: 24.1%. Segment 5: 13.0%. Segment 10: 7.4%. Each bonus segment (Coin Flip, Cash Hunt, Pachinko): 3.7%. Crazy Time bonus: 1.9%.' },
+        { q: 'How often does a bonus round occur in Crazy Time?', a: 'All bonus rounds combined occupy 7 of 54 segments (13% per spin). On average, a bonus round occurs every 7–8 spins.' },
+        { q: 'What is a "gap" in Crazy Time statistics?', a: 'A gap is the number of spins since a segment last appeared. Comparing the current gap to the expected average helps identify which segments are running cold or hot relative to their statistical baseline.' },
+        { q: 'How do I track Crazy Time live statistics?', a: 'Use the live Crazy Time tracker on this site. It fetches real game data and calculates gap scores, frequency deviations, and pattern signals for all segments in real time.' },
+        { q: 'Can statistics predict the next Crazy Time result?', a: 'No. Each spin is independent. Statistics describe long-run averages and help with session planning, but they cannot predict individual results.' },
+      ].map(faq => (
+        <div class="bg-slate-800 rounded-xl p-4">
+          <p class="font-semibold text-slate-100 mb-1 m-0">{faq.q}</p>
+          <p class="text-slate-400 text-sm m-0">{faq.a}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-10 pt-8 border-t border-slate-700 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+      <a href="/crazy-time-predictor" class="text-amber-400 hover:text-amber-300">→ Live Crazy Time tracker</a>
+      <a href="/crazy-time-rtp" class="text-amber-400 hover:text-amber-300">→ RTP & house edge data</a>
+      <a href="/crazy-time-odds" class="text-amber-400 hover:text-amber-300">→ Odds per segment</a>
+      <a href="/crazy-time-probability" class="text-amber-400 hover:text-amber-300">→ Probability explained</a>
+      <a href="/crazy-time-strategy" class="text-amber-400 hover:text-amber-300">→ Strategy guide</a>
+      <a href="/bankroll-calculator" class="text-amber-400 hover:text-amber-300">→ Bankroll calculator</a>
+    </div>
+
+    <StakeCTA variant="sticky" />
+  </div>
+</BaseLayout>

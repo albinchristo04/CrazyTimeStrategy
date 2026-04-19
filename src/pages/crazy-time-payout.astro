@@ -1,0 +1,256 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StakeCTA from '../components/StakeCTA.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What are the payouts in Crazy Time?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Number segment payouts: 1 pays 1:1, 2 pays 2:1, 5 pays 5:1, 10 pays 10:1. Bonus round payouts are multiplied: Coin Flip up to ×1,000, Cash Hunt up to ×500+, Pachinko up to ×10,000, Crazy Time up to ×20,000.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the maximum payout in Crazy Time?',
+      acceptedAnswer: { '@type': 'Answer', text: 'The maximum theoretical payout in Crazy Time is ×20,000 on your Crazy Time bonus stake. On a $1 bonus bet, this pays $20,000. This requires multiple DOUBLE segments to stack on the Crazy Time bonus wheel.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'How does the top slot affect Crazy Time payouts?',
+      acceptedAnswer: { '@type': 'Answer', text: 'If the top slot selects the same segment that wins on the main wheel, the payout is multiplied by the top slot value (typically ×2 to ×10). For bonus rounds, the top slot multiplier applies to all in-round multipliers, dramatically increasing maximum payouts.' },
+    },
+  ],
+};
+---
+<BaseLayout
+  title="Crazy Time Payout Guide — All Multipliers, Bonuses & Max Wins 2026"
+  description="Complete Crazy Time payout guide: number segment multipliers, all four bonus round payouts, top slot mechanics, and how to calculate your potential winnings."
+  schema={schema}
+>
+  <div class="max-w-3xl mx-auto px-4 py-10">
+    <h1>Crazy Time Payout Guide: Every Multiplier Explained</h1>
+    <p class="text-lg text-slate-300">
+      Understanding how Crazy Time payouts work before you bet is essential. This guide covers every segment multiplier, all four bonus round payout structures, how the top slot stacks with wins, and what the maximum payout looks like in practice. No fluff — just the numbers you need to make informed bets.
+    </p>
+
+    <h2>Main Wheel Payouts</h2>
+    <p>
+      The Crazy Time wheel has 54 segments divided into number segments and bonus segments. Number segments pay a fixed multiplier on your bet. Bonus segments trigger a bonus round.
+    </p>
+    <div class="overflow-x-auto mb-8">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-slate-400 border-b border-slate-700 text-left">
+            <th class="pb-2 pr-4">Segment</th>
+            <th class="pb-2 pr-4">Count on Wheel</th>
+            <th class="pb-2 pr-4">Payout</th>
+            <th class="pb-2">Example: $1 bet wins</th>
+          </tr>
+        </thead>
+        <tbody class="text-slate-300">
+          {[
+            { seg: 'Number 1',    count: 24, payout: '1:1',   example: '$1 profit' },
+            { seg: 'Number 2',    count: 13, payout: '2:1',   example: '$2 profit' },
+            { seg: 'Number 5',    count: 7,  payout: '5:1',   example: '$5 profit' },
+            { seg: 'Number 10',   count: 4,  payout: '10:1',  example: '$10 profit' },
+            { seg: 'Coin Flip',   count: 2,  payout: 'Bonus', example: 'See bonus table' },
+            { seg: 'Cash Hunt',   count: 2,  payout: 'Bonus', example: 'See bonus table' },
+            { seg: 'Pachinko',    count: 2,  payout: 'Bonus', example: 'See bonus table' },
+            { seg: 'Crazy Time',  count: 1,  payout: 'Bonus', example: 'See bonus table' },
+          ].map(row => (
+            <tr class="border-b border-slate-700/50">
+              <td class="py-3 pr-4 font-semibold text-slate-100">{row.seg}</td>
+              <td class="py-3 pr-4 text-slate-400">{row.count}</td>
+              <td class="py-3 pr-4 text-amber-400 font-semibold">{row.payout}</td>
+              <td class="py-3 text-slate-300">{row.example}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Bonus Round Payouts</h2>
+    <p>
+      Each of the four bonus rounds has a different payout structure. Unlike the fixed number segment payouts, bonus round payouts are variable — the result depends on what happens during the bonus mini-game.
+    </p>
+
+    <h3>Coin Flip Payout</h3>
+    <p>
+      A coin with two multiplier values (one per face) is flipped. You win whichever multiplier lands face-up, applied to your Coin Flip bet. The top slot can add an additional multiplier to one of the coin's faces before the flip.
+    </p>
+    <div class="overflow-x-auto mb-6">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-slate-400 border-b border-slate-700 text-left">
+            <th class="pb-2 pr-4">Outcome</th>
+            <th class="pb-2">Typical Range</th>
+          </tr>
+        </thead>
+        <tbody class="text-slate-300">
+          {[
+            { outcome: 'Standard result', range: '×2 to ×50' },
+            { outcome: 'Higher result (less common)', range: '×50 to ×200' },
+            { outcome: 'Rare maximum (top slot + high face)', range: 'Up to ×1,000' },
+          ].map(row => (
+            <tr class="border-b border-slate-700/50">
+              <td class="py-3 pr-4 text-slate-100">{row.outcome}</td>
+              <td class="py-3 text-amber-400 font-semibold">{row.range}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Cash Hunt Payout</h3>
+    <p>
+      A grid of 108 symbols hides individual multipliers. You pick one symbol before the grid scrambles. The multiplier behind your chosen symbol is your payout. No picking strategy affects the outcome — all expected values are equal.
+    </p>
+    <div class="overflow-x-auto mb-6">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-slate-400 border-b border-slate-700 text-left">
+            <th class="pb-2 pr-4">Outcome</th>
+            <th class="pb-2">Typical Range</th>
+          </tr>
+        </thead>
+        <tbody class="text-slate-300">
+          {[
+            { outcome: 'Most common results', range: '×10 to ×75' },
+            { outcome: 'Higher results', range: '×75 to ×300' },
+            { outcome: 'Rare maximum', range: '×500 to ×1,000+' },
+          ].map(row => (
+            <tr class="border-b border-slate-700/50">
+              <td class="py-3 pr-4 text-slate-100">{row.outcome}</td>
+              <td class="py-3 text-amber-400 font-semibold">{row.range}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Pachinko Payout</h3>
+    <p>
+      A physical puck drops through a pegboard into multiplier slots. DOUBLE slots restart the puck drop and double all current multipliers. This can cascade multiple times, creating the highest individual payouts outside the Crazy Time bonus itself.
+    </p>
+    <div class="overflow-x-auto mb-6">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-slate-400 border-b border-slate-700 text-left">
+            <th class="pb-2 pr-4">Outcome</th>
+            <th class="pb-2">Typical Range</th>
+          </tr>
+        </thead>
+        <tbody class="text-slate-300">
+          {[
+            { outcome: 'No DOUBLE — standard result', range: '×2 to ×50' },
+            { outcome: 'One DOUBLE', range: '×10 to ×200' },
+            { outcome: 'Two DOUBLEs', range: '×50 to ×1,000' },
+            { outcome: 'Three+ DOUBLEs (rare)', range: '×500 to ×10,000' },
+          ].map(row => (
+            <tr class="border-b border-slate-700/50">
+              <td class="py-3 pr-4 text-slate-100">{row.outcome}</td>
+              <td class="py-3 text-amber-400 font-semibold">{row.range}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Crazy Time Bonus Payout</h3>
+    <p>
+      The most complex and highest-ceiling bonus. A giant second wheel spins with large multipliers. Before the spin, players choose one of three flappers. DOUBLE and TRIPLE segments on the bonus wheel multiply all values before the final result. The potential for cascading multiplications is what makes the ×20,000 max payout theoretically possible.
+    </p>
+    <div class="overflow-x-auto mb-6">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-slate-400 border-b border-slate-700 text-left">
+            <th class="pb-2 pr-4">Outcome</th>
+            <th class="pb-2">Typical Range</th>
+          </tr>
+        </thead>
+        <tbody class="text-slate-300">
+          {[
+            { outcome: 'No DOUBLE/TRIPLE — single spin result', range: '×10 to ×100' },
+            { outcome: 'One DOUBLE or TRIPLE', range: '×50 to ×500' },
+            { outcome: 'Multiple DOUBLE/TRIPLE stacks', range: '×500 to ×5,000' },
+            { outcome: 'Maximum stack scenario', range: 'Up to ×20,000' },
+          ].map(row => (
+            <tr class="border-b border-slate-700/50">
+              <td class="py-3 pr-4 text-slate-100">{row.outcome}</td>
+              <td class="py-3 text-amber-400 font-semibold">{row.range}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <h2>How the Top Slot Multiplies Payouts</h2>
+    <p>
+      Before every main wheel spin, the top slot selects a random segment and assigns it a multiplier (typically ×2, ×3, ×5, or ×10). If the main wheel lands on the same segment, that segment's payout is multiplied.
+    </p>
+    <p>
+      For number segments, this is straightforward: a ×5 top slot on the 10 segment means a winning 10 bet pays 10 × 5 = ×50 instead of ×10.
+    </p>
+    <p>
+      For bonus rounds, the effect is more dramatic. A ×3 top slot on the Crazy Time bonus means all multipliers inside the bonus wheel are tripled before the wheel spins. A result that would normally pay ×100 becomes ×300 — and if DOUBLE or TRIPLE segments stack on top, the ceiling becomes stratospheric.
+    </p>
+    <p>
+      The top slot fires every single round. Watching it before placing your bets gives you live context about which segment has an active multiplier boosting its effective payout.
+    </p>
+
+    <h2>Payout vs. RTP — The Key Distinction</h2>
+    <p>
+      A high potential payout does not mean a high RTP. The Crazy Time bonus can pay ×20,000, but it only lands on 1 of 54 segments — and most rounds pay far less. The RTP (Return to Player) factors in both the payout and the frequency.
+    </p>
+    <p>
+      The segments with the <strong>best RTP are actually the 2 and 10 number segments</strong> (96.2% and 96.3%) — not the bonus rounds. The bonus rounds have similar RTPs (94–96%) but extreme variance. High max payouts come with high variance. You might hit a ×20,000 Crazy Time win; you might also go 200+ spins without a Crazy Time bonus at all.
+    </p>
+    <p>
+      For the full RTP breakdown per segment, see our <a href="/crazy-time-rtp">Crazy Time RTP guide</a>. For probability and frequency data, see the <a href="/crazy-time-statistics">Crazy Time statistics page</a>.
+    </p>
+
+    <StakeCTA variant="card" text="Play Crazy Time for Real Money Payouts on Stake →" />
+
+    <h2>Calculating Your Potential Payout</h2>
+    <p>
+      To calculate your potential payout on any segment:
+    </p>
+    <ul>
+      <li><strong>Number segments</strong>: <code>Bet amount × segment multiplier</code>. A $2 bet on the 5 segment pays $10 profit ($12 returned including stake).</li>
+      <li><strong>Bonus rounds (top slot active)</strong>: <code>Bet amount × bonus result × top slot multiplier</code>. A $1 Pachinko bet, bonus result ×50, top slot ×3 = $150 profit.</li>
+      <li><strong>Crazy Time bonus (stacked)</strong>: <code>Bet amount × bonus wheel result × DOUBLE/TRIPLE stacks × top slot</code>. The variables stack multiplicatively — this is how ×20,000 becomes mathematically possible.</li>
+    </ul>
+    <p>
+      Use our <a href="/bankroll-calculator">bankroll calculator</a> to plan how bet sizing at different amounts affects the real dollar value of these potential payouts relative to your session budget.
+    </p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="space-y-4">
+      {[
+        { q: 'What are the payouts in Crazy Time?', a: 'Number segments: 1 pays 1:1, 2 pays 2:1, 5 pays 5:1, 10 pays 10:1. Bonus rounds pay variable multipliers: Coin Flip up to ×1,000, Cash Hunt up to ×500+, Pachinko up to ×10,000, Crazy Time up to ×20,000.' },
+        { q: 'What is the maximum payout in Crazy Time?', a: 'The maximum theoretical payout is ×20,000 on the Crazy Time bonus stake, achievable through multiple stacked DOUBLE and TRIPLE multipliers. On a $1 bonus bet, this would pay $20,000.' },
+        { q: 'How does the top slot affect Crazy Time payouts?', a: 'The top slot selects a segment and multiplier (×2 to ×10) before each spin. If the main wheel matches, that payout is multiplied. For bonus rounds, the top slot multiplier applies to all in-round multipliers.' },
+        { q: 'Which Crazy Time bonus has the best payout potential?', a: 'The Crazy Time bonus has the highest ceiling (×20,000). Pachinko is next (×10,000 with multiple DOUBLEs). Cash Hunt and Coin Flip have lower maximums but more consistent mid-range payouts.' },
+        { q: 'Does a higher payout mean better value in Crazy Time?', a: 'Not necessarily. The 2 and 10 segments have the best RTP (96.2–96.3%) despite lower max payouts. Bonus rounds have similar RTPs but much higher variance. Choose your bet structure based on your risk tolerance, not just payout ceiling.' },
+      ].map(faq => (
+        <div class="bg-slate-800 rounded-xl p-4">
+          <p class="font-semibold text-slate-100 mb-1 m-0">{faq.q}</p>
+          <p class="text-slate-400 text-sm m-0">{faq.a}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-10 pt-8 border-t border-slate-700 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+      <a href="/crazy-time-rtp" class="text-amber-400 hover:text-amber-300">→ RTP & house edge breakdown</a>
+      <a href="/crazy-time-statistics" class="text-amber-400 hover:text-amber-300">→ Frequency & gap statistics</a>
+      <a href="/crazy-time-bonus-rounds" class="text-amber-400 hover:text-amber-300">→ All 4 bonus rounds explained</a>
+      <a href="/crazy-time-odds" class="text-amber-400 hover:text-amber-300">→ Odds per segment</a>
+      <a href="/bankroll-calculator" class="text-amber-400 hover:text-amber-300">→ Free bankroll calculator</a>
+      <a href="/crazy-time-strategy" class="text-amber-400 hover:text-amber-300">→ Strategy guide</a>
+    </div>
+
+    <StakeCTA variant="sticky" />
+  </div>
+</BaseLayout>

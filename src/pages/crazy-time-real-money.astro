@@ -1,0 +1,210 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StakeCTA from '../components/StakeCTA.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Can you play Crazy Time for real money?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. Crazy Time is a live dealer game that requires real money bets. It cannot be played for free in real-money mode, though you can watch a live table without betting.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the minimum bet for Crazy Time real money?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Minimum bets vary by casino, but most platforms start at $0.10 per segment. On Stake, minimum bets are typically $0.10–$0.20 depending on the table.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is it safe to play Crazy Time for real money online?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes, as long as you play on a licensed and reputable platform. Stake holds a Curaçao gaming license and offers Evolution Gaming\'s certified Crazy Time tables.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can you win real money playing Crazy Time?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. Crazy Time pays real money winnings. The Crazy Time bonus round has paid out up to ×20,000 multipliers on real money bets. Withdrawals on platforms like Stake are processed instantly via crypto.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the best strategy for playing Crazy Time real money?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Bet 1–2% of your session bankroll per round, cover at least one bonus segment, and set a hard stop-loss of 30–40%. Never chase losses. See the full strategy guide for detailed approaches.' },
+    },
+  ],
+};
+---
+<BaseLayout
+  title="Play Crazy Time for Real Money — Guide & Best Casino 2026"
+  description="Everything about playing Crazy Time for real money: minimum bets, best platforms, withdrawal speeds, safety checks, and strategy to protect your bankroll."
+  schema={schema}
+>
+  <div class="max-w-3xl mx-auto px-4 py-10">
+    <h1>Playing Crazy Time for Real Money in 2026</h1>
+    <p class="text-lg text-slate-300">
+      Crazy Time is one of the most popular live dealer games in the world — and it's exclusively a real money game. This guide covers everything you need to know before you deposit: how the real-money game works, what to expect from payouts and withdrawals, how to choose a safe platform, and how to protect your bankroll from the start.
+    </p>
+
+    <h2>How Real Money Crazy Time Works</h2>
+    <p>
+      Crazy Time is a live casino wheel game produced by Evolution Gaming. Every spin of the 54-segment wheel is filmed live and broadcast in real time. When you place a bet, your real money is at stake on each spin. There is no demo mode — the live nature of the game requires real bets to participate.
+    </p>
+    <p>
+      You bet on one or more of eight outcomes: the number segments (1, 2, 5, 10) or one of four bonus rounds (Coin Flip, Cash Hunt, Pachinko, Crazy Time). A host spins the wheel, a result is determined, and winning bets are paid immediately to your account balance.
+    </p>
+    <p>
+      The real money stakes are what make the game exciting — a single Crazy Time bonus round can multiply your stake by up to ×20,000. On a $1 bonus bet, that's $20,000 in winnings. Those outcomes are rare, but they happen on live tables every day.
+    </p>
+
+    <h2>Minimum and Maximum Real Money Bets</h2>
+    <p>
+      Crazy Time is accessible at nearly any bankroll level. Here's what to expect across typical platforms:
+    </p>
+    <div class="overflow-x-auto mb-6">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-slate-400 border-b border-slate-700 text-left">
+            <th class="pb-2 pr-4">Bet Type</th>
+            <th class="pb-2 pr-4">Typical Minimum</th>
+            <th class="pb-2">Typical Maximum</th>
+          </tr>
+        </thead>
+        <tbody class="text-slate-300">
+          {[
+            { type: 'Number segment (1, 2, 5, 10)', min: '$0.10', max: '$5,000+' },
+            { type: 'Bonus segment (Coin Flip etc.)', min: '$0.10', max: '$2,500+' },
+            { type: 'Total per round (all bets)', min: '$0.10', max: '$10,000+' },
+          ].map(row => (
+            <tr class="border-b border-slate-700/50">
+              <td class="py-3 pr-4 text-slate-100">{row.type}</td>
+              <td class="py-3 pr-4 text-green-400 font-semibold">{row.min}</td>
+              <td class="py-3 text-amber-400 font-semibold">{row.max}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p>
+      For most real money players, the sweet spot is $0.20–$2.00 per round total. This keeps sessions sustainable and gives you enough rounds to reach bonus rounds without burning through your bankroll. Use our <a href="/bankroll-calculator">bankroll calculator</a> to find your exact bet size.
+    </p>
+
+    <h2>Where to Play Crazy Time for Real Money</h2>
+    <p>
+      The platform matters as much as the game. A fast withdrawal, clean interface, and no KYC friction can make the difference between a smooth session and a frustrating one.
+    </p>
+
+    <div class="bg-slate-800 border-2 border-amber-500 rounded-2xl p-6 my-6">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="text-3xl">🎰</span>
+        <div>
+          <h3 class="text-lg font-bold text-slate-100 m-0">Stake — Top Pick for Real Money Crazy Time</h3>
+          <span class="text-xs text-amber-500 font-semibold uppercase tracking-wider">Recommended</span>
+        </div>
+      </div>
+      <ul class="text-slate-300 text-sm space-y-1 mb-4">
+        <li>✓ Live Crazy Time 24/7 via Evolution Gaming</li>
+        <li>✓ Crypto deposits: BTC, ETH, USDT, LTC, XRP and more</li>
+        <li>✓ Instant withdrawals — no waiting days for payouts</li>
+        <li>✓ No KYC required for most users</li>
+        <li>✓ Minimum bet from $0.10</li>
+        <li>✓ Mobile-optimised interface</li>
+      </ul>
+      <a
+        href="https://stake.ac/?c=4GH1nePX"
+        target="_blank"
+        rel="noopener sponsored"
+        class="inline-block bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold py-3 px-8 rounded-xl transition w-full text-center text-base"
+      >
+        Play Crazy Time on Stake — Sign Up Free →
+      </a>
+      <p class="text-xs text-slate-500 mt-2 text-center">Affiliate link — we earn commission at no cost to you</p>
+    </div>
+
+    <h2>Is It Safe to Play Crazy Time for Real Money?</h2>
+    <p>
+      Safety comes down to two things: the platform and the game provider. Crazy Time is manufactured and hosted by Evolution Gaming, one of the most regulated live casino suppliers in the world. They are publicly traded on Nasdaq Stockholm and licensed by multiple jurisdictions including the Malta Gaming Authority and the UK Gambling Commission.
+    </p>
+    <p>
+      The physical wheel used in Crazy Time is independently certified. Results cannot be manipulated by the casino because the game is hosted entirely by Evolution — casinos receive a live video feed, they do not control the outcome. This is fundamentally different from software slots where the operator controls the RNG. Read more in our <a href="/crazy-time-is-it-rigged">Is Crazy Time Rigged?</a> breakdown.
+    </p>
+    <p>
+      For platform safety, always verify:
+    </p>
+    <ul>
+      <li>The casino holds a valid gaming license (Curaçao, MGA, UKGC)</li>
+      <li>Withdrawal reviews on independent sites show no payout complaints</li>
+      <li>The platform uses SSL encryption for transactions</li>
+      <li>Responsible gambling tools (deposit limits, self-exclusion) are available</li>
+    </ul>
+
+    <h2>Real Money Payouts — What to Expect</h2>
+    <p>
+      Crazy Time payouts depend entirely on which segment the wheel lands on and whether a top slot multiplier applies. Here's a quick reference:
+    </p>
+    <ul>
+      <li><strong>Segment 1</strong>: pays 1:1 — a $1 bet returns $1 profit</li>
+      <li><strong>Segment 2</strong>: pays 2:1 — a $1 bet returns $2 profit</li>
+      <li><strong>Segment 5</strong>: pays 5:1 — a $1 bet returns $5 profit</li>
+      <li><strong>Segment 10</strong>: pays 10:1 — a $1 bet returns $10 profit</li>
+      <li><strong>Coin Flip bonus</strong>: typically ×2–×100 on your bonus stake, up to ×1,000</li>
+      <li><strong>Cash Hunt bonus</strong>: typically ×10–×500 on your bonus stake</li>
+      <li><strong>Pachinko bonus</strong>: typically ×2–×200, up to ×10,000 with DOUBLE hits</li>
+      <li><strong>Crazy Time bonus</strong>: typically ×10–×500, up to ×20,000 in rare cases</li>
+    </ul>
+    <p>
+      Winnings are credited to your account instantly after each round. On crypto-native platforms like Stake, you can withdraw your real money balance to your wallet with no processing delay. For a full statistical breakdown, see our <a href="/crazy-time-rtp">RTP guide</a>.
+    </p>
+
+    <h2>Bankroll Rules for Real Money Play</h2>
+    <p>
+      Real money play requires discipline. The most common mistake new players make is betting too large relative to their session bankroll. Here are the ground rules:
+    </p>
+    <ul>
+      <li><strong>Session budget</strong>: Only deposit what you are comfortable losing in one session. Never play with rent money or funds you cannot afford to lose.</li>
+      <li><strong>Bet sizing</strong>: Keep each round's total bet at 1–2% of your session budget. A $100 session budget means $1–$2 per round maximum.</li>
+      <li><strong>Stop-loss</strong>: Decide your exit point before starting. If your balance drops 30–40% from your starting amount, end the session.</li>
+      <li><strong>Take-profit</strong>: Set a win target too. If you hit 2× your starting balance, seriously consider stopping — variance works both ways.</li>
+      <li><strong>No chasing</strong>: If you hit your stop-loss, stop completely. Reloading mid-session to chase losses is the fastest route to a large loss.</li>
+    </ul>
+    <p>
+      Use our <a href="/session-planner">session planner tool</a> to set all of these rules before you open the game. Having them written down makes them much easier to follow under pressure.
+    </p>
+
+    <h2>Real Money vs Free Play — Key Differences</h2>
+    <p>
+      Crazy Time cannot be played in free demo mode because it is a live dealer game — a real physical wheel is spinning. Some casinos offer bonus credits that can be used on live games, but these come with wagering requirements. True free play on Crazy Time does not exist.
+    </p>
+    <p>
+      If you want to get familiar with the game mechanics before betting real money, the best approach is to <strong>watch a live table without betting</strong>. Most platforms let you observe the live feed. Spend 20–30 rounds watching the flow of the game, seeing how often bonus rounds hit, and getting comfortable with the interface before you place your first real bet.
+    </p>
+
+    <StakeCTA variant="card" text="Start Playing Crazy Time for Real Money on Stake →" />
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="space-y-4">
+      {[
+        { q: 'Can you play Crazy Time for real money?', a: 'Yes. Crazy Time is exclusively a real money live dealer game. You place real bets before each spin and receive real money payouts on winning segments.' },
+        { q: 'What is the minimum bet for Crazy Time real money?', a: 'Most platforms start at $0.10 per segment. On Stake, minimum bets are typically $0.10–$0.20 depending on table limits.' },
+        { q: 'Is it safe to play Crazy Time for real money online?', a: 'Yes, on licensed platforms. Crazy Time is provided by Evolution Gaming, an independently certified game provider. Choose a platform with a valid gaming license and instant withdrawals.' },
+        { q: 'Can you win real money playing Crazy Time?', a: 'Yes. Real money winnings are paid after each round. The Crazy Time bonus round has a maximum of ×20,000 on your stake. Withdrawals on crypto platforms like Stake are instant.' },
+        { q: 'What is the best strategy for Crazy Time real money?', a: 'Bet 1–2% of your session bankroll per round, always cover at least one bonus segment, and set a hard 30–40% stop-loss before you start.' },
+      ].map(faq => (
+        <div class="bg-slate-800 rounded-xl p-4">
+          <p class="font-semibold text-slate-100 mb-1 m-0">{faq.q}</p>
+          <p class="text-slate-400 text-sm m-0">{faq.a}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-10 pt-8 border-t border-slate-700 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+      <a href="/crazy-time-strategy" class="text-amber-400 hover:text-amber-300">→ Full strategy guide</a>
+      <a href="/crazy-time-rtp" class="text-amber-400 hover:text-amber-300">→ RTP & payout breakdown</a>
+      <a href="/crazy-time-bankroll-strategy" class="text-amber-400 hover:text-amber-300">→ Bankroll management</a>
+      <a href="/where-to-play-crazy-time" class="text-amber-400 hover:text-amber-300">→ Best casinos to play</a>
+      <a href="/bankroll-calculator" class="text-amber-400 hover:text-amber-300">→ Free bankroll calculator</a>
+      <a href="/crazy-time-is-it-rigged" class="text-amber-400 hover:text-amber-300">→ Is Crazy Time rigged?</a>
+    </div>
+
+    <StakeCTA variant="sticky" />
+  </div>
+</BaseLayout>
