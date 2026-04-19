@@ -5,7 +5,7 @@ interface Env {
 export const onRequestGet: PagesFunction<Env> = async ({ env }) => {
   const token = env.TRACKSINO_TOKEN;
   if (!token) {
-    return new Response(JSON.stringify({ error: 'Token not configured' }), {
+    return new Response(JSON.stringify({ error: 'Token not configured', hint: 'Set TRACKSINO_TOKEN in Cloudflare Pages environment variables' }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
     });
@@ -23,8 +23,9 @@ export const onRequestGet: PagesFunction<Env> = async ({ env }) => {
     );
 
     if (!upstream.ok) {
+      const body = await upstream.text().catch(() => '');
       return new Response(
-        JSON.stringify({ error: `Upstream error: ${upstream.status}` }),
+        JSON.stringify({ error: `Upstream error: ${upstream.status}`, detail: body.slice(0, 200) }),
         { status: 502, headers: { 'Content-Type': 'application/json' } }
       );
     }
@@ -44,8 +45,8 @@ export const onRequestGet: PagesFunction<Env> = async ({ env }) => {
         },
       }
     );
-  } catch {
-    return new Response(JSON.stringify({ error: 'Fetch failed' }), {
+  } catch (err) {
+    return new Response(JSON.stringify({ error: 'Fetch failed', detail: String(err) }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
     });
